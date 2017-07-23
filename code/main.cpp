@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <iomanip>
 #include "header_file/UCLCode.h"
+#include "header_file/XMLTools.h"
 
 using  namespace std;
 
@@ -13,9 +14,10 @@ const string sline(100,'*');
 void showCodeHex(string s)
 {
     cout << "UCLCode:\n";
-    for (auto c : s)
+    int len = s.size();
+    for (int i = 0; i < len; ++i)
     {
-        cout << setw(2) << setfill('0') << hex <<((uint16_t)c & 255) << ":";
+        cout << setw(2) << setfill('0') << hex <<((uint16_t)s[i] & 255) << ":";
     }
     cout << setfill(' ') << dec << endl;
 }
@@ -80,7 +82,9 @@ void test_unpack()
 }
 int main() {
 
-    test_code();
-    test_unpack();
+    //test_code();
+    //test_unpack();
+
+    test_code_xml();
     return 0;
 }
