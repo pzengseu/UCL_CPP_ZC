@@ -180,7 +180,7 @@ uint64_t UCLCode::getTypeOfMedia() const
     return getBits(TYPEOFMEDIA_START_BYTE, TYPEOFMEDIA_START_BIT, TYPEOFMEDIA_BIT_LENGTH);
 }
 
-bool UCLCode::setTypeOfMedia(const uint64_t typeOfMedia)
+bool UCLCode::                                                                                                                                                                                                                                                                                       setTypeOfMedia(const uint64_t typeOfMedia)
 {
     return setBits(TYPEOFMEDIA_START_BYTE, TYPEOFMEDIA_START_BIT, TYPEOFMEDIA_BIT_LENGTH, typeOfMedia);
 }

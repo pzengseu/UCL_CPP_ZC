@@ -16,6 +16,7 @@
 #include "../tools/signature/UCLECDSA.h"
 #include "../test/test.h"
 #include "digSignNo.h"
+#include "../code/header_file/XMLTools.h"
 
 const UCLPropertyHead &UCL::getUclPropertyHead() const {
     return uclPropertyHead;
@@ -405,9 +406,17 @@ bool UCL::sigVerify(int helper, const string &originalData, const string &signDa
 }
 
 void UCL::showUCL() {
-    uclCode.showCode();
-//    uclCodeExtension.showCodeExt();
+    //只有code部分
+    if ((uclCode.getFlag() & 0x2) == 0) {
+        showFromXml(uclCode);
+        //    uclCode.showCode();
+        //    uclCodeExtension.showCodeExt();
+        return;
+    }
 
+    showFromXml(uclCode);
+    //    uclCode.showCode();
+    //    uclCodeExtension.showCodeExt();
     cout << "--------------属性部分----------------" << endl;
     cout << "元语言类型: " << UPI.getPropertyLangType(uclPropertyHead.getCategory()) << endl;
     cout << "属性集个数: " << (int) uclPropertyHead.getSize() << endl;

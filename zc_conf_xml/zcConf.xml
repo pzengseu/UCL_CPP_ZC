@@ -7,49 +7,41 @@
         <v3>version-3</v3>
     </version>
 
-    <!--type of Media-->
     <typeofmedia>
         <t1>dual-structural network</t1>
         <t2>undefined</t2>
+        <t8>新闻与信息门户</t8>
     </typeofmedia>
 
-
-    <!--priority and policy-->
     <prioandpoli>
         <p1>immediately issue</p1>
     </prioandpoli>
 
-    <!--flag-->
     <flag>
         <f1>null</f1>
     </flag>
 
 
-    <!--parse rule-->
     <parserule>
         <p1>null</p1>
     </parserule>
 
-    <!--source of content-->
     <sourofcont>
         <s1>UGV001</s1>
         <s2>UGV002</s2>
         <s3>UGV003</s3>
     </sourofcont>
 
-    <!--category-->
     <category>
         <c1>UGV</c1>
         <c2>UAV</c2>
         <c3>master control room</c3>
     </category>
 
-    <!--subcategory-->
     <subcategory>
         <s1>null</s1>
     </subcategory>
 
-    <!--topic-->
     <topic>
         <t1>report</t1>
         <t2>collect</t2>
@@ -57,44 +49,36 @@
         <t4>obstacle avoidance</t4>
     </topic>
 
-    <!--copyright and type of content-->
     <copyandtypeofcont>
         <c1>null</c1>
     </copyandtypeofcont>
 
-    <!--security energy level code-->
     <secuenerlevecode>
         <s1>level: 1</s1>
         <s2>level: 2</s2>
         <s3>level: 3</s3>
     </secuenerlevecode>
 
-    <!--language-->
     <language>
         <l1>Chinese</l1>
     </language>
 
-    <!--size of content-->
     <sizeofcontent>
         <s1>null</s1>
     </sizeofcontent>
 
-    <!--time stamp-->
     <timestamp>
         <t1>null</t1>
     </timestamp>
 
-    <!--serial number-->
     <serialnumber>
         <s1>null</s1>
     </serialnumber>
 
-    <!--multiplex bytes-->
     <multiplexbytes>
         <m1>null</m1>
     </multiplexbytes>
 
-    <!--code check-->
     <codecheck>
         <c1>null</c1>
     </codecheck>

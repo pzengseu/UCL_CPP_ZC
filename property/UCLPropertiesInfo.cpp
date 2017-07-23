@@ -9,6 +9,7 @@
 #include "UCLPropertiesInfo.h"
 #include "../code/header_file/UCLCode.h"
 #include "../UCL/UCL.h"
+#include "../code/header_file/XMLTools.h"
 
 UCLPropertiesInfo::UCLPropertiesInfo()
 {
@@ -367,7 +368,7 @@ void UCLPropertiesInfo::showCDPSRelatedUCL(UCLPropertyBase relatedUCL)
         if ((uc.getFlag() & 0x2) == 0)
         {
             cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
-            uc.showCode();
+            showFromXml(uc);
             cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
         }
         else
