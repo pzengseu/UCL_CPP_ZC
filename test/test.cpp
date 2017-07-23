@@ -5,7 +5,7 @@
 #include "test.h"
 #include "../property/GenCDPSProperty.h"
 #include "../property/GenCGPSProperty.h"
-#include "digSignNo.h"
+#include "../UCL/digSignNo.h"
 #include "../property/GenZCPSProperty.h"
 
 void testCommand()
