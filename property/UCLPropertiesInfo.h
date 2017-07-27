@@ -8,11 +8,15 @@
 #include <string>
 #include <map>
 #include "UCLPropertyBase.h"
+#include "ZCPSInfo.h"
 
 using namespace std;
 /**
  * UCL属性部分受控映射表和控制台显示应用
  */
+//ZCPS相关方法
+static ZCPSInfo ZC = ZCPSInfo();
+
 class UCLPropertiesInfo
 {
 private:
@@ -42,13 +46,15 @@ public:
     void initPropertyCategroyMap();
     string getPropertyCategroy(int categroy, int proCategory);
 
-    //初始化属性部分受控映射表
+    //初始化标准UCL属性部分受控映射表
     void initInfo();
 
     vector<string> split(string str, string pattern);
 
     void showProperty(int category, UCLPropertyBase propertyBase);
     void showPropertyBase(UCLPropertyBase propertyBase);
+
+    //CDPS
     void showCDPSKeywords(UCLPropertyBase keywords);
     void showCDPSAuthor(UCLPropertyBase author);
     void showCDPSEntity(UCLPropertyBase entity);
@@ -56,6 +62,7 @@ public:
     void showCDPSFileInfo(UCLPropertyBase fileInfo);
     void showCDPSRelatedUCL(UCLPropertyBase relatedUCL);
 
+    //CGPS
     void showCGPSProvenance(UCLPropertyBase provenance);
     void showCGPSContentId(UCLPropertyBase content);
     void showCGPSPropagationPath(UCLPropertyBase propagationPath);
@@ -63,6 +70,10 @@ public:
     void showCGPSSELI(UCLPropertyBase seli);
     void showCGPSChainRespons(UCLPropertyBase cr);
     void showCGPSSignatureUP(UCLPropertyBase sup);
+
+    //ZCPS
+    //初始化ZCPS属性集合和属性映射
+    void initZCPS();
 };
 
 
