@@ -1,7 +1,6 @@
 //
 // Created by zp on 17-6-10.
 //
-#include <assert.h>
 #include "test.h"
 #include "../property/GenCDPSProperty.h"
 #include "../property/GenCGPSProperty.h"
@@ -125,8 +124,42 @@ UCLPropertySet generateZCPS()
 {
     UCLPropertySet zcps;
     zcps.setHeadCategory(2);
+
     UCLPropertyBase name = GenZCPSProperty::genName("战场");
     zcps.setProperty(name);
+
+    UCLPropertyBase spaceLoc = GenZCPSProperty::genSpaceLoc("北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(spaceLoc);
+
+    time_t timer = time(NULL);
+    struct tm * tblock;
+    tblock = localtime(&timer);
+    UCLPropertyBase time = GenZCPSProperty::genTime(asctime(tblock));
+    zcps.setProperty(time);
+
+    UCLPropertyBase shape = GenZCPSProperty::genShape("1;北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(shape);
+
+    UCLPropertyBase phy = GenZCPSProperty::genPhysical("1;;1");
+    zcps.setProperty(phy);
+
+    UCLPropertyBase material = GenZCPSProperty::genMaterial("1");
+    zcps.setProperty(material);
+
+    UCLPropertyBase pass = GenZCPSProperty::genPassingAbility("1");
+    zcps.setProperty(pass);
+
+    UCLPropertyBase spaceStatus = GenZCPSProperty::genSpaceStatus("坦克;飞机");
+    zcps.setProperty(spaceStatus);
+
+    UCLPropertyBase amf = GenZCPSProperty::genAbsMotionFea("10;;北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(amf);
+
+    UCLPropertyBase rmf = GenZCPSProperty::genRelMotionFea("10;100;北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(rmf);
+
+    UCLPropertyBase tp = GenZCPSProperty::genTravellingPath("10;;北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(tp);
 
     return zcps;
 }

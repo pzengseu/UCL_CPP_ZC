@@ -6,10 +6,15 @@
 #define UCL_CPP_ZCPSINFO_H
 #include <iostream>
 #include <map>
+#include <vector>
 #include "UCLPropertyBase.h"
 
 using namespace std;
 
+static string DEFAULT_PATTERN = ";";
+/**
+ * ZCPS相关映射及显示
+ */
 class ZCPSInfo {
 private:
     map<int, string> spaceLocMap;
@@ -29,8 +34,25 @@ public:
 
     void setPropertyMap(map<int, string> &propertySetCategoryMap,
                         map<int, map<int, string>> &propertyCategoryMap);
+    string getMapValue(map<int, string> m, int key);
 
     void showProperty(UCLPropertyBase propertyBase);
+
+    void showName(UCLPropertyBase propertyBase);
+    void showSpaceLoc(UCLPropertyBase propertyBase);
+    void showTime(UCLPropertyBase propertyBase);
+
+    vector<string> getShape(string vPart);
+    void showShape(UCLPropertyBase propertyBase);
+
+    vector<string> getPhysical(string vPart);
+    void showPhysical(UCLPropertyBase propertyBase);
+
+    void showMaterial(UCLPropertyBase propertyBase);
+    void showPassingAbility(UCLPropertyBase propertyBase);
+    void showSpaceStatus(UCLPropertyBase propertyBase);
+    void showMotionFea(UCLPropertyBase propertyBase);
+    void showTravellingPath(UCLPropertyBase propertyBase);
 };
 
 #endif //UCL_CPP_ZCPSINFO_H

@@ -19,6 +19,7 @@ UCLPropertiesInfo::UCLPropertiesInfo()
     initPropertyCategroyMap();
 
     initInfo();
+    initZCPS();
 }
 
 vector<string> UCLPropertiesInfo::split(string str, string pattern)

@@ -49,7 +49,7 @@ public:
     //初始化标准UCL属性部分受控映射表
     void initInfo();
 
-    vector<string> split(string str, string pattern);
+    static vector<string> split(string str, string pattern);
 
     void showProperty(int category, UCLPropertyBase propertyBase);
     void showPropertyBase(UCLPropertyBase propertyBase);
