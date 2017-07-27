@@ -36,7 +36,7 @@
 
 //category
 #define CATEGORY_NAME "category"
-#define CATEGORY_INITIAL "aabb"
+#define CATEGORY_INITIAL "c"
 
 //subcategory
 #define SUBCATEGORY_NAME "subcategory"

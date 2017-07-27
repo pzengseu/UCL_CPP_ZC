@@ -6,12 +6,133 @@
 #include "./header_file/UCLCode.h"
 #include "./header_file/UCLFormatV2.h"
 #include <iomanip>
+#include <stdio.h>
 
 using std::cout;
 using std::setw;
 using std::endl;
 using std::setfill;
 
+
+void UCLCode::mapTest()
+{
+	uint64_t out = getMBU("PRIOANDPOLI", 1);
+	cout << out << endl;
+	SI_MAP m1;
+	m1["aaa"] = 1;
+	m1["bbb"] = 2;
+	if(m1.find("aaa") == m1.end()) {
+		cout << "not have\n";
+	}
+	cout << m1.find("aaa")->second << endl;
+
+}
+
+/**
+ * not used at present
+ * buffKey: the key of MBU
+ * return the value from MBU
+ */
+uint16_t UCLCode::getFromMBU(const char buffKey[]) const
+{
+	uint16_t out = 0;
+	if(MBU.find(buffKey) == MBU.end()) {
+		cout << buffKey << " is not in MBU!!!" << endl;
+		return ~out;//不存在时返回UINT16_MAX
+	} else {
+		return MBU.find(buffKey)->second;
+	}
+}
+
+/**
+ * mbu: minimum bits unit
+ * fieldName: the name of UCL code field
+ * mbuOrder: the order of the mbu in the filed
+ * if the mbu not exist return UINT64_MAX
+ * elss return the mbu
+ */
+uint64_t UCLCode::getMBU(const char* fieldName, uint8_t mbuOrder) const
+{
+	uint64_t out = 0;
+	uint8_t fieldStartByte = 0;
+	uint8_t fieldStartBit = 0;
+	uint8_t mbuStartBit = 0;
+	uint8_t bitLength = 0;
+	char buffKey[buffKeySize];
+
+	sprintf(buffKey, "%s_START_BYTE", fieldName);
+	if(MBU.find(buffKey) == MBU.end()) {
+		cout << buffKey << " is not in MBU!!!" << endl;
+		return ~out;//不存在时返回UINT64_MAX(MBU取不到该值)
+	} else {
+		fieldStartByte = MBU.find(buffKey)->second;
+	}
+
+	sprintf(buffKey, "%s_START_BIT", fieldName);
+	if(MBU.find(buffKey) == MBU.end()) {
+		cout << buffKey << " is not in MBU!!!" << endl;
+		return ~out;//不存在时返回UINT64_MAX(MBU取不到该值)
+	} else {
+		fieldStartBit = MBU.find(buffKey)->second;
+	}
+
+	sprintf(buffKey, "%s_MBU_%d_START_BIT", fieldName, mbuOrder);
+	if(MBU.find(buffKey) == MBU.end()) {
+		cout << buffKey << " is not in MBU!!!" << endl;
+		return ~out;//不存在时返回UINT64_MAX(MBU取不到该值)
+	} else {
+		mbuStartBit = MBU.find(buffKey)->second;
+	}
+
+	sprintf(buffKey, "%s_MBU_%d_BIT_LENGTH", fieldName, mbuOrder);
+	if(MBU.find(buffKey) == MBU.end()) {
+		cout << buffKey << " is not in MBU!!!" << endl;
+		return ~out;//不存在时返回UINT64_MAX(MBU取不到该值)
+	} else {
+		bitLength = MBU.find(buffKey)->second;
+	}
+
+	out = getBits(fieldStartByte, fieldStartBit + mbuStartBit, bitLength);
+//cout << "hhh " << out << endl;
+	return out;
+}
+
+/**
+ *  fieldName: the name of UCL code field
+ *  return the each mbu's value of the field
+ *  the first element is the length of result array
+ */
+uint64_t * UCLCode::getField(const char* fieldName) const
+{
+	uint64_t* out = new uint64_t[MAX_MBU_NUMS+1];
+	out[0] = 1;//initial the length
+	char buffKey[buffKeySize];
+	uint8_t mbuNums = 0;
+	sprintf(buffKey, "%s_MBU_NUMS", fieldName);
+	if(MBU.find(buffKey) == MBU.end()) {
+		cout << buffKey << " is not in MBU!!!" << endl;
+		exit(1);
+	} else {
+		mbuNums = MBU.find(buffKey)->second;
+	}
+	for(int i = 1; i <= mbuNums; ++i) {
+		out[i] = getMBU(fieldName, i);
+		++out[0];
+	}
+	return out;
+}
+
+//以16进制形式输出Code
+void UCLCode::showCodeHex(string s) const
+{
+    cout << "UCLCode:\n";
+    int len = s.size();
+    for (int i = 0; i < len; ++i)
+    {
+        cout << setw(2) << setfill('0') << hex <<((uint16_t)s[i] & 255) << ":";
+    }
+    cout << setfill(' ') << dec << endl;
+}
 
 void UCLCode::codeDisplay(const UCLCode &code) const
 {
