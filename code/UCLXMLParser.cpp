@@ -6,7 +6,9 @@
  */
 
 #include "./header_file/XMLTools.h"
+#include "./header_file/UCLFormatMap.h"
 #include <stdio.h>
+#include <inttypes.h>
 
 
 
@@ -141,12 +143,165 @@ void readUCLXml(const char* filePath) {
 
 }
 
-void showFromXml(const UCLCode &code) {
+void category(const UCLCode &code) {
+
+    const char* filePath = "./zc_conf_xml/zcCategoryConf.xml";
+    TiXmlDocument doc(filePath);
+    bool loadOkay = doc.LoadFile();
+    // faile to load the xml file.
+    if (!loadOkay) {
+        printf( "Could not load xml file %s. Error='%s'. Exiting.\n", filePath,doc.ErrorDesc() );
+        exit( 1 );
+    }
+    TiXmlElement* root = doc.RootElement();
+    const int buffSize = 20;
+    int width = 32;
+    char buff[buffSize];
+
+
+    TiXmlNode*  item = root->FirstChild( VERSION_NAME );
+    sprintf(buff, "%s%llu", VERSION_INITIAL, code.getVersion());
+    cout << setfill(' ') << setw(width) << "Version:" << item->FirstChild(buff)->ToElement()->GetText() << endl;
+
+    item = root->FirstChild( CATEGORY_NAME );
+    memset(buff, 0, sizeof(char)*buffSize);
+    sprintf(buff, "%s%llu", CATEGORY_INITIAL, code.getCategory());
+    cout << buff << endl;
+    cout << setfill(' ') << setw(width) << "Version:" << item->FirstChild(buff)->ToElement()->GetText() << endl;
+}
+
+/**
+ * fieldName: the name of the field:
+ * mbuOrder: the order of the mbu in the field
+ * mbuValue: the value of mbu
+ * show the value of the mbu from xml file
+ */
+void showMBUFromXml(const char* fieldName, uint8_t mbuOrder, uint64_t mbuValue) {
+
+//cout << ">>>>>>>>>>MBU" << endl;
 
 // Read information from xml file.
 // define xml file path, as follow , we use relative path,
 // but you can use absolute path also.
-    const char* filePath = "../zc_conf_xml/zcConf.xml";
+    const char* filePath = "./zc_conf_xml/zcConf.xml";
+    const char* tiXmlNodeUndefined = "Undefined";
+    TiXmlDocument doc(filePath);
+    bool loadOkay = doc.LoadFile();
+    // failed to load the xml file.
+    if (!loadOkay) {
+        printf( "Could not load xml file %s. Error='%s'. Exiting.\n", filePath,doc.ErrorDesc() );
+        exit( 1 );
+    }
+    TiXmlElement* root = doc.RootElement();
+
+    const int buffSize = 64;
+    int width = 32;
+    char buff[buffSize];
+    memset(buff, 0, sizeof(char)*buffSize);
+
+    char buffFieldName[buffSize];
+    memset(buffFieldName, 0, sizeof(char)*buffSize);
+
+    sprintf(buff, "%s_NAME", fieldName);
+	if(CODE_NAME.find(buff) == CODE_NAME.end()) {
+		cout << buff << " is not in CODE_NAME!!!" << endl;
+		exit(1);
+	} else {
+		strcpy(buffFieldName, CODE_NAME.find(buff)->second.c_str());
+	}
+
+//cout << 	"aaaaa: " << buffFieldName << endl;
+    TiXmlNode*  item = root->FirstChild( buffFieldName );
+    if(item == NULL)  {
+    	cout << "Node is not in xml file" << endl;
+    	exit(1);
+    }
+
+    memset(buffFieldName, 0, sizeof(char)*buffSize);
+    memset(buff, 0, sizeof(char)*buffSize);
+    sprintf(buff, "%s_INITIAL", fieldName);
+	if(CODE_NAME.find(buff) == CODE_NAME.end()) {
+		cout << buff << " is not in CODE_NAME!!!" << endl;
+		exit(1);
+	} else {
+		strcpy(buffFieldName, CODE_NAME.find(buff)->second.c_str());
+	}
+
+    memset(buff, 0, sizeof(char)*buffSize);
+    sprintf(buff, "%s_%u_%llu", buffFieldName, mbuOrder, mbuValue);
+    TiXmlNode* pTXNode = item->FirstChild(buff);
+    cout << setfill(' ') << setw(width) << fieldName << " : ";
+    if(pTXNode != NULL) {
+    	cout << pTXNode ->ToElement()->GetText() << "\n";
+    } else {
+    	cout << tiXmlNodeUndefined << "\n";
+    }
+//cout << "MBU>>>>>>>>" << endl;
+}
+
+/**
+ * fieldName: the name of the field
+ * code: the reference of an UCLCode object
+ * return the value from xml file of the given field
+ */
+void showFieldFromXML(const char* fieldName, const UCLCode &code) {
+//cout << "=====\n";
+	uint64_t* fieldArr = NULL;
+	fieldArr = code.getField(fieldName);
+//cout << "arr=====\n";
+	for(int i = 1; i < fieldArr[0]; ++i) {
+		showMBUFromXml(fieldName, i, fieldArr[i]);
+//cout << "arr: " << fieldArr[i] << "\n";
+	}
+//cout << "arr=====" << endl;
+	delete fieldArr;
+}
+
+void showCodeFromXML(const UCLCode &code) {
+    int width = 32;
+cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+	showFieldFromXML("VERSION", code);
+	showFieldFromXML("TYPEOFMEDIA", code);
+	showFieldFromXML("PRIOANDPOLI", code);
+	showFieldFromXML("FLAG", code);
+	cout << setfill(' ') << setw(width) << "PARSERULE" << " : " << code.getParseRule() << "\n";
+	//showFieldFromXML("PARSERULE", code);
+	showFieldFromXML("SOUROFCONT", code);
+	showFieldFromXML("CATEGORY", code);
+	cout << setfill(' ') << setw(width) << "SUBCATEGORY" << " : " << code.getSubCategory() << "\n";
+	//showFieldFromXML("SUBCATEGORY", code);
+	showFieldFromXML("TOPIC", code);
+	showFieldFromXML("COPYANDTYPEOFCONT", code);
+	showFieldFromXML("SECUENERLEVECODE", code);
+	showFieldFromXML("LANGUAGE", code);
+	showFieldFromXML("SIZEOFCONTENT", code);
+
+	const time_t t = code.getTimeStamp();
+	cout << setfill(' ') << setw(width) << "TIMESTAMP" << " : " << t << "\t";
+	struct tm* st = localtime(&t);
+	cout << setfill(' ') << setw(width) << "TIME" << " : "
+			<< st->tm_year + 1900 << "-"
+			<< st->tm_mon + 1 << "-"
+			<< st->tm_mday << " "
+			<< st->tm_hour << ":"
+			<< st->tm_min << ":"
+			<< st->tm_sec
+			<< "\n";
+
+	cout << setfill(' ') << setw(width) << "SERIALNUMBER" << " : " << code.getSerialNumber() << "\n";
+	cout << setfill(' ') << setw(width) << "MULTIPLEXBYTES" << " : " << code.getMultiplexBytes() << "\n";
+	cout << setfill(' ') << setw(width) << "CODECHECK" << " : " << code.getCodeCheck() << "\n";
+cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+}
+
+void showFromXml(const UCLCode &code) {
+	showFieldFromXML("PRIOANDPOLI", code);
+
+// Read information from xml file.
+// define xml file path, as follow , we use relative path,
+// but you can use absolute path also.
+    const char* filePath = "./zc_conf_xml/zcConf.xml";
+    const char* tiXmlNodeUndefined = "Undefined";
     TiXmlDocument doc(filePath);
     bool loadOkay = doc.LoadFile();
     // faile to load the xml file.
@@ -161,17 +316,25 @@ void showFromXml(const UCLCode &code) {
     char buff[buffSize];
 
     TiXmlNode*  item = root->FirstChild( VERSION_NAME );
-    sprintf(buff, "%s%lu", VERSION_INITIAL, code.getVersion());
-    cout << setfill(' ') << setw(width) << "Version:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
+    sprintf(buff, "%s%llu", VERSION_INITIAL, code.getVersion());
+    //sprintf(buff, "%s%llu", VERSION_INITIAL, 4);
+    TiXmlNode* txnVersion = item->FirstChild(buff);
+    cout << setfill(' ') << setw(width) << "Version:";
+    if(txnVersion != NULL) {
+    	cout << txnVersion ->ToElement()->GetText() << "\n";
+    } else {
+    	cout << tiXmlNodeUndefined << "\n";
+    }
+
 
     item = root->FirstChild( TYPEOFMEDIA_NAME );
     memset(buff, 0, sizeof(char)*buffSize);
-    sprintf(buff, "%s%lu", TYPEOFMEDIA_INITIAL, code.getTypeOfMedia());
+    sprintf(buff, "%s%llu", TYPEOFMEDIA_INITIAL, code.getTypeOfMedia());
     cout << setfill(' ') << setw(width) << "Type of Media:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
 
     item = root->FirstChild( PRIOANDPOLI_NAME );
     memset(buff, 0, sizeof(char)*buffSize);
-    sprintf(buff, "%s%u", PRIOANDPOLI_INITIAL, code.getPrioAndPoli());
+    sprintf(buff, "%s%llu", PRIOANDPOLI_INITIAL, code.getPrioAndPoli());
     cout << setfill(' ') << setw(width) << "Prio and Poli:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
 
 
@@ -180,39 +343,37 @@ void showFromXml(const UCLCode &code) {
 
     item = root->FirstChild( SOUROFCONT_NAME );
     memset(buff, 0, sizeof(char)*buffSize);
-    sprintf(buff, "%s%lu", SOUROFCONT_INITIAL, code.getSourOfCont());
+    sprintf(buff, "%s%llu", SOUROFCONT_INITIAL, code.getSourOfCont());
     cout << setfill(' ') << setw(width) << "Source of Content:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
 
-//    TiXmlNode* item00 = root->FirstChild( CATEGORY_NAME );
-//    memset(buff, 0, sizeof(char)*buffSize);
-//    sprintf(buff, "%s%lu", CATEGORY_INITIAL, code.getCategory());
-//    //printf("%s, %s\n", CATEGORY_NAME, buff);
-//    cout << setfill(' ') << setw(width) << "Category:" << item00->FirstChild(buff)->ToElement()->GetText() << "\n";
+    TiXmlNode* item00 = root->FirstChild( CATEGORY_NAME );
+    memset(buff, 0, sizeof(char)*buffSize);
+    sprintf(buff, "%s%llu", CATEGORY_INITIAL, code.getCategory());
+    //printf("%s, %s\n", CATEGORY_NAME, buff);
+    cout << setfill(' ') << setw(width) << "Category:" << item00->FirstChild(buff)->ToElement()->GetText() << "\n";
 
     cout << setfill(' ') << setw(width) << "Category:" << code.getSubCategory() << "\n";
     cout << setfill(' ') << setw(width) << "Subcategory:" << code.getSubCategory() << "\n";
 
-//    item = root->FirstChild( TOPIC_NAME );
-//    memset(buff, 0, sizeof(char)*buffSize);
-//    sprintf(buff, "%s%lu", TOPIC_INITIAL, code.getTopic());
-//    printf("%s\n", buff);
-//    cout << setfill(' ') << setw(width) << "Topic:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
+    item = root->FirstChild( TOPIC_NAME );
+    memset(buff, 0, sizeof(char)*buffSize);
+    sprintf(buff, "%s%llu", TOPIC_INITIAL, code.getTopic());
+    //printf("%s\n", buff);
+    cout << setfill(' ') << setw(width) << "Topic:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
 
-    cout << setfill(' ') << setw(width) << "Topic:" << code.getTopic() << "\n";
     cout << setfill(' ') << setw(width) << "Copyright and Type of Cont:" << code.getCopyAndTypeOfCont() << "\n";
 
     item = root->FirstChild( SECUENERLEVECODE_NAME );
     memset(buff, 0, sizeof(char)*buffSize);
-    sprintf(buff, "%s%lu", SECUENERLEVECODE_INITIAL, code.getSecuEnerLeveCode());
+    sprintf(buff, "%s%llu", SECUENERLEVECODE_INITIAL, code.getSecuEnerLeveCode());
     cout << setfill(' ') << setw(width) << "Security Energy Level Code:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
 
-//    item = root->FirstChild( LANGUAGE_NAME );
-//    memset(buff, 0, sizeof(char)*buffSize);
-//    sprintf(buff, "%s%lu", LANGUAGE_INITIAL, code.getLanguage());
-//    //printf("%s\n", buff);
-//    cout << setfill(' ') << setw(width) << "Language:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
+    item = root->FirstChild( LANGUAGE_NAME );
+    memset(buff, 0, sizeof(char)*buffSize);
+    sprintf(buff, "%s%llu", LANGUAGE_INITIAL, code.getLanguage());
+    //printf("%s\n", buff);
+    cout << setfill(' ') << setw(width) << "Language:" << item->FirstChild(buff)->ToElement()->GetText() << "\n";
 
-    cout << setfill(' ') << setw(width) << "Language:" << code.getLanguage() << "\n";
     cout << setfill(' ') << setw(width) << "Size of Content:" << code.getSizeOfContent() << "\n";
     cout << setfill(' ') << setw(width) << "Time Stamp:" << code.getTimeStamp() << "\n";
     cout << setfill(' ') << setw(width) << "Serial Number:" << code.getSerialNumber() << "\n";
@@ -220,27 +381,73 @@ void showFromXml(const UCLCode &code) {
     cout << setfill(' ') << setw(width) << "Code Check:" << code.getCodeCheck() << endl;
 }
 
+
+
+void showFromXml2(const UCLCode &code) {
+
+// Read information from xml file.
+// define xml file path, as follow , we use relative path,
+// but you can use absolute path also.
+    const char* filePath = "./zc_conf_xml/zcConf.xml";
+    const char* tiXmlNodeUndefined = "Undefined";
+    TiXmlDocument doc(filePath);
+    bool loadOkay = doc.LoadFile();
+    // failed to load the xml file.
+    if (!loadOkay) {
+        printf( "Could not load xml file %s. Error='%s'. Exiting.\n", filePath,doc.ErrorDesc() );
+        exit( 1 );
+    }
+    TiXmlElement* root = doc.RootElement();
+
+    const int buffSize = 20;
+    int width = 32;
+    char buff[buffSize];
+
+    TiXmlElement* part = root->FirstChildElement(VERSION_NAME);
+
+    TiXmlNode*  item = part->FirstChild( "first" );
+    if(item == NULL)  {
+    	cout << "333" << endl;
+    	return;
+    }
+
+    sprintf(buff, "%s%llu", VERSION_INITIAL, code.getVersion());
+    //sprintf(buff, "%s%llu", VERSION_INITIAL, 4);
+    TiXmlNode* txnVersion = item->FirstChild(buff);
+    cout << setfill(' ') << setw(width) << "Version:";
+    if(txnVersion != NULL) {
+    	cout << txnVersion ->ToElement()->GetText() << "\n";
+    } else {
+    	cout << tiXmlNodeUndefined << "\n";
+    }
+}
+
+
+
+/**
+ * 本模块单元测试程序
+ */
 void test_code_xml()
 {
     UCLCode code_test;
 
     cout << "new a UCLCode:\n";
-
-    code_test.codeDisplay(code_test);
-    cout << '\n';
+    cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    //code_test.codeDisplay(code_test);
+    //cout << '\n';
 
     code_test.setVersion(1);
-    code_test.setTypeOfMedia(1);
+    code_test.setTypeOfMedia(0);
     code_test.setPrioAndPoli(1);
-    code_test.setFlag(13);
-    code_test.setParseRule(0xfff1);//ff1有效
-    code_test.setSourOfCont(2);//ffffff1有效
+    code_test.setFlag(0x5A);
+    code_test.setParseRule(0xfff1);//ff1
+    code_test.setSourOfCont(0x3000000);//ffffff1
     code_test.setCategory(1);
-    code_test.setSubCategory(257);//0x01有效
-    code_test.setTopic(3);
-    code_test.setCopyAndTypeOfCont(254);
-    code_test.setSecuEnerLeveCode(3);
-    code_test.setLanguage(1);
+    code_test.setSubCategory(0x01);//0x01
+    code_test.setTopic(0x101);
+    code_test.setCopyAndTypeOfCont(0x46);
+    code_test.setSecuEnerLeveCode(0x1B);
+    code_test.setLanguage(8);
     code_test.setSizeOfContent(31);
     code_test.setTimeStamp(time(NULL));
     /*
@@ -251,22 +458,32 @@ void test_code_xml()
     code_test.setMultiplexBytes(0x1f3f5f7f9f48);
 
 
-    string s = code_test.pack(); //打包测试,自动生成校验码
+    string s = code_test.pack(); //
+
+    code_test.showCodeHex(s);
+    cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 
     code_test.showCode();
-    cout << '\n';
+    cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 
-    showFromXml(code_test);
+    cout << "result from xml : " << endl;
+    showCodeFromXML(code_test);
+    cout << endl;
+
+//    cout << "result from xml : " << endl;
+//    showFromXml(code_test);
+//    cout << "===========" << endl;
+
 
 }
 
 void testRead() {
 	//const char* filePath = "F:\\eclipseC++\\ZC_V1.1\\zc_conf_xml\\test.xml";
 	//const char* filePath = "F:\\eclipseC++\\ZC_V1.1\\code\\test.xml";
-    const char* filePath = "../zc_conf_xml/zcConf.xml";
+    const char* filePath = "./zc_conf_xml/zcConf.xml";
     //readXml(filePath);
     readUCLXml(filePath);
-//	const char* filePath = "./zc_conf_xml/test.xml";//相对路径是相对于Binaries目录下的可执行文件
+//	const char* filePath = "./zc_conf_xml/test.xml";//鐩稿璺緞鏄浉瀵逛簬Binaries鐩綍涓嬬殑鍙墽琛屾枃浠�
 //	readXml(filePath);
 //	const char* filePath2 = "./zc_conf_xml/zc_conf.xml";
 //	readXml(filePath2);

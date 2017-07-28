@@ -9,9 +9,14 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string>
+#include <map>
 #include "UCLFormatV2.h"
+#include "UCLFormatMap.h"
 
-using std::string;
+using namespace std;
+
+typedef     map<string,   int>   SI_MAP;
+
 
 const uint16_t crcTable[16] =
         {
@@ -20,6 +25,9 @@ const uint16_t crcTable[16] =
                 0xA001, 0x6C00, 0x7800, 0xB401,
                 0x5000, 0x9C01, 0x8801, 0x4400,
         };
+
+const uint8_t MAX_MBU_NUMS = 15;
+const int buffKeySize = 64;
 
 class UCLCode
 {
@@ -30,6 +38,15 @@ public:
     //析构函数
     virtual ~UCLCode() {}
 
+    void mapTest();
+
+    uint16_t getFromMBU(const char buff[]) const;
+
+    uint64_t getMBU(const char* fieldName, uint8_t mbuOrder) const;//return mbu: minimum bits unit
+
+    uint64_t * getField(const char* fieldName) const;//traverse the mbu of the field
+
+    void showCodeHex(string s) const;
     void codeDisplay(const UCLCode &code) const;//显示所有域
     void showCode() const;//显示所有域
 

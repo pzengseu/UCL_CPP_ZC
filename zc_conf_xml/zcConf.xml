@@ -2,84 +2,176 @@
 <uclcode>
 
     <version>
-        <v1>version-1</v1>
-        <v2>version-2</v2>
-        <v3>version-3</v3>
+            <v_1_1>Version-1</v_1_1>
+            <v_1_2>Version-2</v_1_2>
+            <v_1_3>Version-3</v_1_3>             
     </version>
-
+    
+    <!-- type of Media -->
     <typeofmedia>
-        <t1>dual-structural network</t1>
-        <t2>undefined</t2>
-        <t8>新闻与信息门户</t8>
+        <t_1_0>ZC Target Object Encode</t_1_0>
+        <t_1_1>Dual-structural Network</t_1_1>
     </typeofmedia>
-
+        
+    <!-- priority and policy -->
     <prioandpoli>
-        <p1>immediately issue</p1>
+        <p_1_0>Object Priority : 0</p_1_0>
+        <p_1_1>Object Priority : 1</p_1_1>
+        <p_1_2>Object Priority : 2</p_1_2>
+        <p_1_3>Object Priority : 3</p_1_3>
+        <p_1_4>Object Priority : 4</p_1_4>
+        <p_1_5>Object Priority : 5</p_1_5>
+        <p_1_6>Object Priority : 6</p_1_6>
+        <p_1_7>Object Priority : 7</p_1_7>
+        
+        <p_2_0>Non-preemptive Mode</p_2_0>
+        <p_2_1>Preemptive Mode</p_2_1>
+        
+        <p_3_0>Immediately Issue</p_3_0>
+        <p_3_1>Timing Issue</p_3_1>
+        
+        <p_4_0>Not Circularly Issue</p_4_0>
+        <p_4_1>Circularly Issue In 1 Hour</p_4_1>
+        <p_4_2>Circularly Issue In 2 Hour</p_4_2>
+        <p_4_3>Circularly Issue In 4 Hour</p_4_3>
+        <p_4_4>Circularly Issue In 8 Hour</p_4_4>
+        <p_4_5>Circularly Issue In 12 Hour</p_4_5>
+        <p_4_6>Circularly Issue In 24 Hour</p_4_6>
+        <p_4_7>Circularly Issue In 48 Hour</p_4_7>
     </prioandpoli>
-
+    
+        <!-- flag -->
     <flag>
-        <f1>null</f1>
+        <f_1_0>Not Extend</f_1_0>
+        <f_1_1>Extend</f_1_1>
+
+        <f_2_0>Do Not Have Property</f_2_0>
+        <f_2_1>Have Properties</f_2_1> 
+        
+        <f_3_0>Multiplex Bytes Do Not Have Timing Or Circularly Issue</f_3_0>
+        <f_3_1>Multiplex Bytes Have Timing Or Circularly Issue</f_3_1>
+
+        <f_4_0>Multiplex Bytes Do Not Have Information Defined By Application</f_4_0>
+        <f_4_1>Multiplex Bytes Have Information Defined By Application</f_4_1>
+        
+        <f_5_0>Separation</f_5_0>
+        <f_5_1>Full</f_5_1>
+        
+        <f_6_0>Do Not Have Related UCL</f_6_0>
+        <f_6_1>Have Related UCL</f_6_1>
+        
+        <f_7_0>Do Not Have User-defined Property Set</f_7_0>
+        <f_7_1>Have User-defined Property Set</f_7_1>
+                                                              
     </flag>
-
-
+    
+    <!-- parse rule -->
     <parserule>
-        <p1>null</p1>
+
     </parserule>
 
+    <!-- source of content -->
     <sourofcont>
-        <s1>UGV001</s1>
-        <s2>UGV002</s2>
-        <s3>UGV003</s3>
+        <s_1_1>URL</s_1_1>
+        <s_1_2>Organization Name</s_1_2>
+        <s_1_3>Application : ZC</s_1_3>
     </sourofcont>
-
+    
+    <!-- category -->
     <category>
-        <c1>UGV</c1>
-        <c2>UAV</c2>
-        <c3>master control room</c3>
-    </category>
-
+        <c_1_1>Command Center</c_1_1>
+        <c_1_2>Driverless Cars</c_1_2>
+        <c_1_3>Unmanned Aerial Drones</c_1_3>
+    </category>    
+    
+    <!-- subcategory -->
     <subcategory>
-        <s1>null</s1>
-    </subcategory>
 
+    </subcategory>    
+    
+        <!-- topic -->
     <topic>
-        <t1>report</t1>
-        <t2>collect</t2>
-        <t3>attack</t3>
+        <t_1_0>Common Topic</t_1_0>
+        <t_1_1>Small Minority Topic</t_1_1>
+
+        <t_3_256>Subordinate Report to Superior</t_3_256>
+        <t_3_257>Command To Subordinate From Superior</t_3_257>
+        <t_3_258>Information Collection</t_3_258>
         <t4>obstacle avoidance</t4>
     </topic>
 
+    <!-- copyright and type of content -->
     <copyandtypeofcont>
-        <c1>null</c1>
+        <c_1_0>Transmit Command</c_1_0>
+        <c_1_1>Direct Command</c_1_1>
+        
+        <c_5_1>Text</c_5_1>
+        <c_5_2>Image</c_5_2>
+        <c_5_3>Audio</c_5_3>
+        <c_5_4>Video</c_5_4>
+        <c_5_5>Multimedia Message</c_5_5>
+        <c_5_6>Application</c_5_6>
+        <c_5_7>Composite Type</c_5_7>                          
     </copyandtypeofcont>
-
+    
+    <!-- security energy level code -->
     <secuenerlevecode>
-        <s1>level: 1</s1>
-        <s2>level: 2</s2>
-        <s3>level: 3</s3>
-    </secuenerlevecode>
-
+        <s_1_0>Labeled When Generated</s_1_0>
+        <s_1_1>Content Provider Certification</s_1_1>
+        <s_1_2>Authoritative Content Center Certification</s_1_2>
+        
+        <s_2_0>Physics Safety Level : 0</s_2_0>
+        <s_2_1>Physics Safety Level : 1</s_2_1>
+        <s_2_2>Physics Safety Level : 2</s_2_2>
+        <s_2_3>Physics Safety Level : 3</s_2_3>
+        <s_2_4>Physics Safety Level : 4</s_2_4>
+        <s_2_5>Physics Safety Level : 5</s_2_5>
+        <s_2_6>Physics Safety Level : 6</s_2_6>
+        <s_2_7>Physics Safety Level : 7</s_2_7>
+        
+        <s_3_0>Logic Safety Level : 0</s_3_0>
+        <s_3_1>Logic Safety Level : 1</s_3_1>
+        <s_3_2>Logic Safety Level : 2</s_3_2>
+        <s_3_3>Logic Safety Level : 3</s_3_3>
+        <s_3_4>Logic Safety Level : 4</s_3_4>
+        <s_3_5>Logic Safety Level : 5</s_3_5>
+        <s_3_6>Logic Safety Level : 6</s_3_6>
+        <s_3_7>Logic Safety Level : 7</s_3_7>
+    </secuenerlevecode>  
+    
+        <!-- language -->
     <language>
-        <l1>Chinese</l1>
-    </language>
-
+        <l_1_8>Chinese</l_1_8>
+        <l_1_36>English</l_1_36>
+        
+        <l_2_0>Property Part Has The Same Language With Code Part</l_2_0>
+        <l_2_1>Property Part Has The Same Language With Meta Language</l_2_1>
+        <l_2_2>Property Part's Language Different With Code Part And Meta Language</l_2_2>
+    </language>  
+    
+        <!-- size of content -->
     <sizeofcontent>
-        <s1>null</s1>
+        <s_1_0>[1, 4)</s_1_0>
+        <s_1_1>[4, 16)</s_1_1>
+        <s_1_2>[16, 64)</s_1_2>
+        <s_1_3>[64, 128)</s_1_3>
+        <s_1_4>[128, 256)</s_1_4>
+        <s_1_5>[256, 512)</s_1_5>
+        <s_1_6>[512, 768)</s_1_6>
+        <s_1_7>[768, 1024)</s_1_7>
+        
+        <s_2_0>B</s_2_0>
+        <s_2_1>KB</s_2_1>
+        <s_2_2>MB</s_2_2>
+        <s_2_3>GB</s_2_3>
     </sizeofcontent>
-
+    
+        <!-- time stamp -->
     <timestamp>
-        <t1>null</t1>
+        
     </timestamp>
-
-    <serialnumber>
-        <s1>null</s1>
-    </serialnumber>
-
-    <multiplexbytes>
-        <m1>null</m1>
-    </multiplexbytes>
-
-    <codecheck>
-        <c1>null</c1>
-    </codecheck>
+    
+    
+    
+    
 </uclcode>
