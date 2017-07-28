@@ -13,6 +13,7 @@
 #include "../code/header_file/UCLCodeExtension.h"
 #include "../property/UCLPropertiesInfo.h"
 
+//UCL标准受控映射表
 static UCLPropertiesInfo UPI = UCLPropertiesInfo();
 class UCL{
 private:

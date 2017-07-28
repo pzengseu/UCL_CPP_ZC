@@ -161,7 +161,9 @@ void UCLPropertySet::unpack(string propertySet)
 
 void UCLPropertySet::showPropertySet()
 {
-    if (propertyHead.getCategory() == 1 || propertyHead.getCategory() == 15) {
+    if (propertyHead.getCategory() == 1 ||
+            propertyHead.getCategory() == 15 ||
+            propertyHead.getCategory() == 2) {
         cout << "属性集合名: " << UPI.getPropertySetCategory(propertyHead.getCategory()) << endl;
         cout << "属性集类别: " << (int)propertyHead.getCategory() << "    属性个数: " << dec << (int)propertyHead.getSize() <<endl;
         map<int, UCLPropertyBase>::iterator property = properties.begin();

@@ -1,12 +1,12 @@
 //
 // Created by zp on 17-6-10.
 //
-#include <assert.h>
 #include "test.h"
 #include "../property/GenCDPSProperty.h"
 #include "../property/GenCGPSProperty.h"
-#include "digSignNo.h"
+#include "../UCL/digSignNo.h"
 #include "../property/GenZCPSProperty.h"
+#include "../code/header_file/XMLTools.h"
 
 void testCommand()
 {
@@ -17,18 +17,18 @@ void testCommand()
 
     code_test.setVersion(1);
     code_test.setTypeOfMedia(8);
-    code_test.setPrioAndPoli(0);
+    code_test.setPrioAndPoli(1);
     code_test.setFlag(50); //00110010
-    code_test.setParseRule(0);//ff1有效
-    code_test.setSourOfCont(1);//ffffff1有效
-    code_test.setCategory(255);
+    code_test.setParseRule(0xfff1);//ff1有效
+    code_test.setSourOfCont(2);//ffffff1有效
+    code_test.setCategory(1);
     code_test.setSubCategory(257);//0x01有效
-    code_test.setTopic(0xffffff1);
-    code_test.setCopyAndTypeOfCont(19);
-    code_test.setSecuEnerLeveCode(251);
-    code_test.setLanguage(8);
+    code_test.setTopic(3);
+    code_test.setCopyAndTypeOfCont(254);
+    code_test.setSecuEnerLeveCode(3);
+    code_test.setLanguage(1);
     code_test.setSizeOfContent(31);
-    code_test.setTimeStamp(0x3fffffffff9f9);
+    code_test.setTimeStamp(time(NULL));
     /*
      * serinal number and multiplex bytes test cases
      * 0xCff1f3 - 0x8fffff31; 0x8f1f - 0x1f3f5f7f9f; 0x4f - 0x1f3f5f7f9f48; 0xf - 0x1f3f5f7f9f48
@@ -124,8 +124,42 @@ UCLPropertySet generateZCPS()
 {
     UCLPropertySet zcps;
     zcps.setHeadCategory(2);
+
     UCLPropertyBase name = GenZCPSProperty::genName("战场");
     zcps.setProperty(name);
+
+    UCLPropertyBase spaceLoc = GenZCPSProperty::genSpaceLoc("北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(spaceLoc);
+
+    time_t timer = time(NULL);
+    struct tm * tblock;
+    tblock = localtime(&timer);
+    UCLPropertyBase time = GenZCPSProperty::genTime(asctime(tblock));
+    zcps.setProperty(time);
+
+    UCLPropertyBase shape = GenZCPSProperty::genShape("1;北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(shape);
+
+    UCLPropertyBase phy = GenZCPSProperty::genPhysical("1;;1");
+    zcps.setProperty(phy);
+
+    UCLPropertyBase material = GenZCPSProperty::genMaterial("1");
+    zcps.setProperty(material);
+
+    UCLPropertyBase pass = GenZCPSProperty::genPassingAbility("1");
+    zcps.setProperty(pass);
+
+    UCLPropertyBase spaceStatus = GenZCPSProperty::genSpaceStatus("坦克;飞机");
+    zcps.setProperty(spaceStatus);
+
+    UCLPropertyBase amf = GenZCPSProperty::genAbsMotionFea("10;;北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(amf);
+
+    UCLPropertyBase rmf = GenZCPSProperty::genRelMotionFea("10;100;北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(rmf);
+
+    UCLPropertyBase tp = GenZCPSProperty::genTravellingPath("10;;北纬N39°40′20.09″ 东经E116°32′13.51");
+    zcps.setProperty(tp);
 
     return zcps;
 }
@@ -137,19 +171,19 @@ UCL generateRUCL()
     UCLCode code_test;
 
     code_test.setVersion(1);
-    code_test.setTypeOfMedia(9);
-    code_test.setPrioAndPoli(15);
-    code_test.setFlag(2); //00000010
+    code_test.setTypeOfMedia(1);
+    code_test.setPrioAndPoli(1);
+    code_test.setFlag(2);
     code_test.setParseRule(0xfff1);//ff1有效
-    code_test.setSourOfCont(0xfffffff1);//ffffff1有效
-    code_test.setCategory(255);
+    code_test.setSourOfCont(2);//ffffff1有效
+    code_test.setCategory(1);
     code_test.setSubCategory(257);//0x01有效
-    code_test.setTopic(0xffffff1);
+    code_test.setTopic(3);
     code_test.setCopyAndTypeOfCont(254);
-    code_test.setSecuEnerLeveCode(251);
-    code_test.setLanguage(253);
+    code_test.setSecuEnerLeveCode(3);
+    code_test.setLanguage(1);
     code_test.setSizeOfContent(31);
-    code_test.setTimeStamp(0x3fffffffff9f9);
+    code_test.setTimeStamp(time(NULL));
     /*
      * serinal number and multiplex bytes test cases
      * 0xCff1f3 - 0x8fffff31; 0x8f1f - 0x1f3f5f7f9f; 0x4f - 0x1f3f5f7f9f48; 0xf - 0x1f3f5f7f9f48

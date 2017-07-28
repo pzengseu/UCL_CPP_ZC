@@ -9,6 +9,8 @@
 #include "UCLPropertiesInfo.h"
 #include "../code/header_file/UCLCode.h"
 #include "../UCL/UCL.h"
+#include "../code/header_file/XMLTools.h"
+#include "ZCPSInfo.h"
 
 UCLPropertiesInfo::UCLPropertiesInfo()
 {
@@ -17,6 +19,7 @@ UCLPropertiesInfo::UCLPropertiesInfo()
     initPropertyCategroyMap();
 
     initInfo();
+    initZCPS();
 }
 
 vector<string> UCLPropertiesInfo::split(string str, string pattern)
@@ -64,11 +67,9 @@ string UCLPropertiesInfo::getPropertyLangType(int type)
 
 void UCLPropertiesInfo::initPropertySetCategoryMap()
 {
-    // 0的属性集合保留，2～14属性集合未定义
+    // 0的属性集合保留，2～14属性集合标准UCL未定义
     propertySetCategoryMap[1] = "内容描述属性集合";
     propertySetCategoryMap[15] = "内容管理属性集合";
-
-    propertySetCategoryMap[2] = "受控映射表属性集合";
 }
 
 string UCLPropertiesInfo::getPropertySetCategory(int type)
@@ -108,7 +109,10 @@ void UCLPropertiesInfo::initPropertyCategroyMap()
 
 string UCLPropertiesInfo::getPropertyCategroy(int categroy, int proCategory)
 {
-    return propertyCategoryMap[categroy][proCategory];
+    if (propertyCategoryMap.find(categroy) != propertyCategoryMap.end()
+            && propertyCategoryMap[categroy].find(proCategory) != propertyCategoryMap[categroy].end())
+        return propertyCategoryMap[categroy][proCategory];
+    return "自定义属性";
 }
 
 void UCLPropertiesInfo::initInfo()
@@ -210,6 +214,12 @@ void UCLPropertiesInfo::showProperty(int category, UCLPropertyBase propertyBase)
             default:
                 cout << "****自定义属性****" << endl;
         }
+    }
+
+    //ZC
+    if (category == 2)
+    {
+        ZC.showProperty(propertyBase);
     }
 }
 
@@ -367,7 +377,7 @@ void UCLPropertiesInfo::showCDPSRelatedUCL(UCLPropertyBase relatedUCL)
         if ((uc.getFlag() & 0x2) == 0)
         {
             cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
-            uc.showCode();
+            showFromXml(uc);
             cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
         }
         else
@@ -482,4 +492,9 @@ void UCLPropertiesInfo::showCGPSSignatureUP(UCLPropertyBase sup)
     cout << "数字摘要算法: " << hash[sup.getLPartHead(2, 5)];
     cout << "   数字签名算法: " << signatureMap[sup.getHelper()] << endl;
     cout << "摘要或签名信息: " << sup.getVPart() << endl;
+}
+
+//ZCPS
+void UCLPropertiesInfo::initZCPS() {
+    ZC.setPropertyMap(propertySetCategoryMap, propertyCategoryMap);
 }

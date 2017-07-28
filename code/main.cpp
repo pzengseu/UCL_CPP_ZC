@@ -21,6 +21,7 @@ void showCodeHex(string s)
     }
     cout << setfill(' ') << dec << endl;
 }
+
 /*code部分get set方法测试*/
 void test_code()
 {
