@@ -10,18 +10,6 @@ using  namespace std;
 
 const string sline(100,'*');
 
-//以16进制形式输出Code
-void showCodeHex(string s)
-{
-    cout << "UCLCode:\n";
-    int len = s.size();
-    for (int i = 0; i < len; ++i)
-    {
-        cout << setw(2) << setfill('0') << hex <<((uint16_t)s[i] & 255) << ":";
-    }
-    cout << setfill(' ') << dec << endl;
-}
-
 /*code部分get set方法测试*/
 void test_code()
 {
@@ -60,7 +48,7 @@ void test_code()
 
     string s = code_test.pack(); //打包测试,自动生成校验码
 
-    showCodeHex(s);
+    code_test.showCodeHex(s);
     cout << sline << '\n';
     code_test.showCode();
 
@@ -78,15 +66,20 @@ void test_unpack()
     code_test.unpack(s);
     string s2 = code_test.pack();
     cout << sline << '\n';
-    showCodeHex(s2);
+    code_test.showCodeHex(s2);
     code_test.showCode();
 }
+
+
+
+/**
+ * 调用UCL code 部分测试程序
+ */
 int main() {
 
     //test_code();
     //test_unpack();
 
-//	testRead();
     test_code_xml();
     return 0;
 }

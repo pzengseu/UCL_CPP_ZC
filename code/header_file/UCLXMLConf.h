@@ -1,6 +1,9 @@
-//
-// Created by hp-6380 on 2017/7/23.
-//
+/*
+ *  Created on: 2017-7-23
+ *      Author: Oneway
+ */
+
+
 
 #ifndef V1_3_UCLXMLCONF_H
 #define V1_3_UCLXMLCONF_H

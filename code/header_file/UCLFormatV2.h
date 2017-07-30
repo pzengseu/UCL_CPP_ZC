@@ -1,10 +1,14 @@
-//
-// Created by Oneway on 2016/12/5.
-// Modified by Oneway on 2017/6/1.
-//
-//Add MBU.
-//Modified by Oneway on 2017/7/27.
-//
+/*
+ *  Created on: 2016-12-5
+ *      Author: Oneway
+ *
+ *      Modified by Oneway on 2017/6/1.
+ *
+ *      Add getField and getMBU
+ *      Modified by Oneway on 2017/7/30
+ */
+
+
 
 #ifndef UCL_V0_1_UCLFORMATV2_H
 #define UCL_V0_1_UCLFORMATV2_H
