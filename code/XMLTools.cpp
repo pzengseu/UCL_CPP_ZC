@@ -4,11 +4,11 @@
  */
 
 
-
-#include "./header_file/XMLTools.h"
-#include "./header_file/UCLFormatMap.h"
 #include <stdio.h>
 #include <inttypes.h>
+#include <cstdlib>
+#include "./header_file/XMLTools.h"
+#include "./header_file/UCLFormatMap.h"
 
 
 const char* XML_PATH = "../code/zc_conf_xml/zcConf.xml";
@@ -127,8 +127,8 @@ bool showMBUFromXml(const char* fieldName, uint8_t mbuOrder, uint64_t mbuValue, 
     		width = MBU.find(buff)->second;
     	}
 
-//    	cout << setfill('0') << setw(width) << itoa(mbuValue, binaryString, 2)
-//    			<< "(B)\n" << setfill(' ') ;
+        cout << setfill('0') << setw(width) << snprintf(binaryString, sizeof(binaryString), "%d", mbuValue)
+    			<< "(B)\n" << setfill(' ') ;
     	delete[] binaryString;
     }
 

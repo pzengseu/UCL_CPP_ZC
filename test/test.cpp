@@ -58,8 +58,6 @@ void testCommand()
     cout << "========== UCL test end==========\n";
     cout << ucl.getUclPropertyHead().getTotalLength() << endl;
     cout << ucl.getUclCode().getSizeOfContent();
-//    printPackString(ucl.pack());
-//    printPackString(ucl2.pack());
 }
 
 void printPackString(string pack)

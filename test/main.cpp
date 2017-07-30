@@ -14,17 +14,8 @@ void testUCLCodeEasy()
     cout << "========== UCL Code test end  ==========\n";
 }
 
-void testUCL()
-{
-    //UCLCode部分测试函数
-//    testUCLCodeEasy();
-
-    //测试UCL打包解包
-    testCommand();
-}
-
 int main()
 {
-    testUCL();
+    testCommand();
     return 0;
 }
