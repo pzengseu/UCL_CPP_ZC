@@ -374,10 +374,10 @@ void UCLPropertiesInfo::showCDPSRelatedUCL(UCLPropertyBase relatedUCL)
         pos += 32;
         UCLCode uc;
         uc.unpack(code);
-        if ((uc.getFlag() & 0x2) == 0)
+        if ((uc.getFlag() & 0x40) == 0)
         {
             cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
-            showFromXml(uc);
+            showCodeFromXML(uc);
             cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" << endl;
         }
         else

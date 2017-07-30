@@ -17,6 +17,7 @@ void testCommand();
 void printPackString(string pack);
 UCL generateRUCL();
 
+UCLCode generateCode();
 UCLPropertySet generateCDPS();
 UCLPropertySet generateCGPS();
 UCLPropertySet generateZCPS();

@@ -14,7 +14,6 @@
 #include "../tools/signature/UCLRSA.h"
 #include "../tools/signature/UCLDSA.h"
 #include "../tools/signature/UCLECDSA.h"
-#include "../test/test.h"
 #include "digSignNo.h"
 #include "../code/header_file/XMLTools.h"
 
@@ -407,14 +406,14 @@ bool UCL::sigVerify(int helper, const string &originalData, const string &signDa
 
 void UCL::showUCL() {
     //只有code部分
-    if ((uclCode.getFlag() & 0x2) == 0) {
-        showFromXml(uclCode);
+    if ((uclCode.getFlag() & 0x40) == 0) {
+        showCodeFromXML(uclCode);
         //    uclCode.showCode();
         //    uclCodeExtension.showCodeExt();
         return;
     }
 
-    showFromXml(uclCode);
+    showCodeFromXML(uclCode);
     //    uclCode.showCode();
     //    uclCodeExtension.showCodeExt();
     cout << "--------------属性部分----------------" << endl;
