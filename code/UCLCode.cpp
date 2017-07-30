@@ -1,7 +1,14 @@
-//
-// Created by Oneway on 2016/12/5.
-// Modified by Oneway on 2017/6/1.
-//
+/*
+ *  Created on: 2016-12-5
+ *      Author: Oneway
+ *
+ *      Modified by Oneway on 2017/6/1.
+ *
+ *      Add getField and getMBU
+ *      Modified by Oneway on 2017/7/30
+ */
+
+
 
 #include "./header_file/UCLCode.h"
 #include "./header_file/UCLFormatV2.h"
@@ -14,19 +21,6 @@ using std::endl;
 using std::setfill;
 
 
-void UCLCode::mapTest()
-{
-	uint64_t out = getMBU("PRIOANDPOLI", 1);
-	cout << out << endl;
-	SI_MAP m1;
-	m1["aaa"] = 1;
-	m1["bbb"] = 2;
-	if(m1.find("aaa") == m1.end()) {
-		cout << "not have\n";
-	}
-	cout << m1.find("aaa")->second << endl;
-
-}
 
 /**
  * not used at present
@@ -44,11 +38,13 @@ uint16_t UCLCode::getFromMBU(const char buffKey[]) const
 	}
 }
 
+
+
 /**
  * mbu: minimum bits unit
  * fieldName: the name of UCL code field
  * mbuOrder: the order of the mbu in the filed
- * if the mbu not exist return UINT64_MAX
+ * if the mbu does not exist return UINT64_MAX
  * elss return the mbu
  */
 uint64_t UCLCode::getMBU(const char* fieldName, uint8_t mbuOrder) const
@@ -97,12 +93,14 @@ uint64_t UCLCode::getMBU(const char* fieldName, uint8_t mbuOrder) const
 	return out;
 }
 
+
+
 /**
  *  fieldName: the name of UCL code field
- *  return the each mbu's value of the field
+ *  return each mbu's value of the field as an array
  *  the first element is the length of result array
  */
-uint64_t * UCLCode::getField(const char* fieldName) const
+uint64_t* UCLCode::getField(const char* fieldName) const
 {
 	uint64_t* out = new uint64_t[MAX_MBU_NUMS+1];
 	out[0] = 1;//initial the length
@@ -137,13 +135,6 @@ void UCLCode::showCodeHex(string s) const
 void UCLCode::codeDisplay(const UCLCode &code) const
 {
 
-    /*
-    for (int i=0; i < 5; ++i)
-    {
-        char ch[9]="";
-        std::cout << i << ":" << setw(8) << setfill('0') << itoa(code.uclCode[i], ch, 2) << std::endl;
-    }
-    */
     int width = 32;
     cout << setfill(' ') << setw(width) << "Version:" << code.getVersion() << "\n";
     cout << setfill(' ') << setw(width) << "Type of Media:" << code.getTypeOfMedia() << "\n";
@@ -186,9 +177,15 @@ void UCLCode::showCode() const
     cout << setfill(' ') << setw(width) << "Code Check:" << getCodeCheck() << endl;
 }
 
-//根据给定的起始字节、起始位和长度获取uclCode的值
-//According to the given byte, start bit and length get the value of uclCode
-uint64_t UCLCode::getBits(const uint8_t startByte, const uint8_t startBit, const uint8_t bitLength) const
+
+
+/**
+ * startByte: the start byte in uclCode[CODE_BYTES](refer to the UCL standard)
+ * startBit: the start bit in first byte
+ * bitLength: the bits length of the field
+ *  return the value of field according to the given given arguments
+ */
+uint64_t UCLCode::getBits(const uint8_t startByte, const uint8_t startBit, const uint8_t bitLength) const//根据给定的起始字节、起始位和长度获取uclCode的值
 {
     uint8_t byteNum = 0;
     uint8_t byteNumCopy = 0;
@@ -217,8 +214,16 @@ uint64_t UCLCode::getBits(const uint8_t startByte, const uint8_t startBit, const
     return out & maskCode;  //不是第0位开始且不是第7位结束时需要修正
 }
 
-//根据给定的起始字节、起始位和长度设置uclCode的值
-bool UCLCode::setBits(const uint8_t startByte, const uint8_t startBit, const uint8_t bitLength, const uint64_t bitStream)
+
+
+/**
+ * startByte: the start byte in uclCode[CODE_BYTES](refer to the UCL standard)
+ * startBit: the start bit in first byte
+ * bitLength: the bits length of the field
+ * bitStream: the value will be set in the filed
+ *  set the value of field according to the given given arguments
+ */
+bool UCLCode::setBits(const uint8_t startByte, const uint8_t startBit, const uint8_t bitLength, const uint64_t bitStream)//根据给定的起始字节、起始位和长度设置uclCode的值
 {
     uint8_t byteNum = 0;
     uint8_t temp = 0;
@@ -258,14 +263,6 @@ string UCLCode::pack()
     {
         setCodeCheck();
     }
-    /*
-    char ch[CODE_BYTES] = {'\0'};
-    for (int i =0; i < CODE_BYTES; ++i)
-    {
-        ch[i] = uclCode[i];
-    }
-    string s(ch,CODE_BYTES);
-    */
     string s((char *)uclCode, CODE_BYTES);//使用无符号数组初始化字符串
     return s;
 }
@@ -301,7 +298,7 @@ uint64_t UCLCode::getTypeOfMedia() const
     return getBits(TYPEOFMEDIA_START_BYTE, TYPEOFMEDIA_START_BIT, TYPEOFMEDIA_BIT_LENGTH);
 }
 
-bool UCLCode::                                                                                                                                                                                                                                                                                       setTypeOfMedia(const uint64_t typeOfMedia)
+bool UCLCode::setTypeOfMedia(const uint64_t typeOfMedia)
 {
     return setBits(TYPEOFMEDIA_START_BYTE, TYPEOFMEDIA_START_BIT, TYPEOFMEDIA_BIT_LENGTH, typeOfMedia);
 }
@@ -432,25 +429,25 @@ bool UCLCode::setSizeOfContent(const uint64_t sizeOfContent)
         lengthRange = getLengthRange(sizeOfContent);
         maxLengthUnit=0;
     }
-    else if(sizeOfContent>=1024&&(sizeOfContent/1024)<1024)
+    else if(sizeOfContent>=1024 && (sizeOfContent/1024)<1024)
     {
         //KB
         lengthRange = getLengthRange(sizeOfContent/1024);
-        maxLengthUnit=1;
+        maxLengthUnit = 1;
     }
-    else if((sizeOfContent/1024)>=1024&&(sizeOfContent/1024/1024)<1024)
+    else if((sizeOfContent/1024)>=1024 && (sizeOfContent/1024/1024)<1024)
     {
         //MB
         lengthRange = getLengthRange(sizeOfContent/1024/1024);
-        maxLengthUnit=2;
+        maxLengthUnit = 2;
     }
-    else if((sizeOfContent/1024/1024)>=1024&&(sizeOfContent/1024/1024/1024)<1024)
+    else if((sizeOfContent/1024/1024)>=1024 && (sizeOfContent/1024/1024/1024)<1024)
     {
         //GB
         lengthRange = getLengthRange(sizeOfContent/1024/1024/1024);
-        maxLengthUnit=3;
+        maxLengthUnit = 3;
     }
-    sizes=(maxLengthUnit<<3)|lengthRange;
+    sizes = (maxLengthUnit<<3) | lengthRange;
     return setBits(SIZEOFCONTENT_START_BYTE, SIZEOFCONTENT_START_BIT, SIZEOFCONTENT_BIT_LENGTH, sizes);
 }
 
@@ -458,19 +455,19 @@ uint8_t UCLCode::getLengthRange(uint64_t sizeOfContent)
 {
     if(sizeOfContent<4)
         return 0;
-    else if(sizeOfContent>=4&&sizeOfContent<16)
+    else if(sizeOfContent>=4 && sizeOfContent<16)
         return 1;
-    else if(sizeOfContent>=16&&sizeOfContent<64)
+    else if(sizeOfContent>=16 && sizeOfContent<64)
         return 2;
-    else if(sizeOfContent>=64&&sizeOfContent<128)
+    else if(sizeOfContent>=64 && sizeOfContent<128)
         return 3;
-    else if(sizeOfContent>=128&&sizeOfContent<256)
+    else if(sizeOfContent>=128 && sizeOfContent<256)
         return 4;
-    else if(sizeOfContent>=256&&sizeOfContent<512)
+    else if(sizeOfContent>=256 && sizeOfContent<512)
         return 5;
-    else if(sizeOfContent>=512&&sizeOfContent<768)
+    else if(sizeOfContent>=512 && sizeOfContent<768)
         return 6;
-    else if(sizeOfContent>=768&&sizeOfContent<1024)
+    else //(sizeOfContent>=768 && sizeOfContent<1024)
         return 7;
 }
 

@@ -1,6 +1,9 @@
-//
-// Created by hp-6380 on 2016/12/5.
-//
+/*
+ *  Created on: 2016-12-5
+ *      Author: Oneway
+ */
+
+
 
 #ifndef UCL_V0_1_UCLCODE_H
 #define UCL_V0_1_UCLCODE_H
@@ -40,19 +43,64 @@ public:
 
     void mapTest();
 
+    /**
+     * not used at present
+     * buffKey: the key of MBU
+     * return the value from MBU
+     */
     uint16_t getFromMBU(const char buff[]) const;
 
+
+
+    /**
+     * mbu: minimum bits unit
+     * fieldName: the name of UCL code field
+     * mbuOrder: the order of the mbu in the filed
+     * if the mbu does not exist return UINT64_MAX
+     * elss return the mbu
+     */
     uint64_t getMBU(const char* fieldName, uint8_t mbuOrder) const;//return mbu: minimum bits unit
 
-    uint64_t * getField(const char* fieldName) const;//traverse the mbu of the field
 
+
+    /**
+     *  fieldName: the name of UCL code field
+     *  return each mbu's value of the field as an array
+     *  the first element is the length of result array
+     */
+    uint64_t* getField(const char* fieldName) const;//traverse the mbu of the field
+
+
+
+    /**
+     * display the value of UCLCodeExtension
+     */
     void showCodeHex(string s) const;
     void codeDisplay(const UCLCode &code) const;//显示所有域
     void showCode() const;//显示所有域
 
-    //获取bit位、设置bit位
+
+
+    /**
+     * startByte: the start byte in uclCode[CODE_BYTES](refer to the UCL standard)
+     * startBit: the start bit in first byte
+     * bitLength: the bits length of the field
+     *  return the value of field according to the given given arguments
+     */
     uint64_t getBits(const uint8_t startByte, const uint8_t startBit, const uint8_t bitLength) const;
+
+
+
+    /**
+     * startByte: the start byte in uclCode[CODE_BYTES](refer to the UCL standard)
+     * startBit: the start bit in first byte
+     * bitLength: the bits length of the field
+     * bitStream: the value will be set in the filed
+     *  set the value of field according to the given given arguments
+     */
     bool setBits(const uint8_t startByte, const uint8_t startBit, const uint8_t bitLength, const uint64_t bitStream);
+
+
 
     /*
      * code部分打包、解包
