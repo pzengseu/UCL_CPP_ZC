@@ -4,8 +4,8 @@
 #include <bitset>
 #include <cassert>
 #include "UCLPropertySet.h"
-#include "UCLPropertiesInfo.h"
-#include "../UCL/UCL.h"
+#include "../info/UCLPropertiesInfo.h"
+#include "../../UCL/UCL.h"
 
 bool UCLPropertySet::setPropertyHead(UCLPropertyHead propertyHead)
 {

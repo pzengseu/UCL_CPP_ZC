@@ -3,7 +3,7 @@
 //
 
 #include <assert.h>
-#include "UCLPropertyBase.h"
+#include "../base/UCLPropertyBase.h"
 #include "GenCDPSProperty.h"
 
 UCLPropertyBase GenCDPSProperty::genTitle(string vPart, uint8_t helper)

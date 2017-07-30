@@ -7,7 +7,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
-#include "UCLPropertyBase.h"
+#include "../base/UCLPropertyBase.h"
 
 using namespace std;
 
@@ -17,12 +17,14 @@ static string DEFAULT_PATTERN = ";";
  */
 class ZCPSInfo {
 private:
+    //ZCPS受控映射表
     map<int, string> spaceLocMap;
     map<int, string> timeMap;
     map<int, string> shapeMap;
     map<int, string> phyElectricMap;
     map<int, string> phySoundMap;
     map<int, string> phyNuclearMap;
+    map<int, string> phyRadarMap;
     map<int, string> materialMap;
     map<int, string> passAbiMap;
     map<int, string> motionFeaMap;
@@ -50,7 +52,7 @@ public:
 
     void showMaterial(UCLPropertyBase propertyBase);
     void showPassingAbility(UCLPropertyBase propertyBase);
-    void showSpaceStatus(UCLPropertyBase propertyBase);
+    void showSpaceEnemyS(UCLPropertyBase propertyBase);
     void showMotionFea(UCLPropertyBase propertyBase);
     void showTravellingPath(UCLPropertyBase propertyBase);
 };

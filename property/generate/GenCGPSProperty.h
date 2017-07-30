@@ -5,7 +5,7 @@
 #ifndef UCL_CPP_GENCGPSPROPERTY_H
 #define UCL_CPP_GENCGPSPROPERTY_H
 
-#include "UCLPropertyBase.h"
+#include "../base/UCLPropertyBase.h"
 
 /**
  *  CGPS, provenance, content id, propagation path, signature of content, security energy level information,

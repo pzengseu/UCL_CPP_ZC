@@ -2,10 +2,10 @@
 // Created by zp on 17-6-10.
 //
 #include "test.h"
-#include "../property/GenCDPSProperty.h"
-#include "../property/GenCGPSProperty.h"
+#include "../property/generate/GenCDPSProperty.h"
+#include "../property/generate/GenCGPSProperty.h"
 #include "../UCL/digSignNo.h"
-#include "../property/GenZCPSProperty.h"
+#include "../property/generate/GenZCPSProperty.h"
 #include "../code/header_file/XMLTools.h"
 
 void testCommand()
@@ -116,7 +116,7 @@ UCLPropertySet generateZCPS()
     UCLPropertyBase shape = GenZCPSProperty::genShape("1;北纬N39°40′20.09″ 东经E116°32′13.51");
     zcps.setProperty(shape);
 
-    UCLPropertyBase phy = GenZCPSProperty::genPhysical("1;;1");
+    UCLPropertyBase phy = GenZCPSProperty::genPhysical("0;;1;");
     zcps.setProperty(phy);
 
     UCLPropertyBase material = GenZCPSProperty::genMaterial("1");
@@ -125,8 +125,8 @@ UCLPropertySet generateZCPS()
     UCLPropertyBase pass = GenZCPSProperty::genPassingAbility("1");
     zcps.setProperty(pass);
 
-    UCLPropertyBase spaceStatus = GenZCPSProperty::genSpaceStatus("坦克;飞机");
-    zcps.setProperty(spaceStatus);
+    UCLPropertyBase spaceEnemyS = GenZCPSProperty::genSpaceEnemyS("坦克;;潜艇");
+    zcps.setProperty(spaceEnemyS);
 
     UCLPropertyBase amf = GenZCPSProperty::genAbsMotionFea("10;;北纬N39°40′20.09″ 东经E116°32′13.51");
     zcps.setProperty(amf);

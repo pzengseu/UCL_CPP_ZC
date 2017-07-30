@@ -7,9 +7,9 @@
 #include <iterator>
 #include <bitset>
 #include "UCLPropertiesInfo.h"
-#include "../code/header_file/UCLCode.h"
-#include "../UCL/UCL.h"
-#include "../code/header_file/XMLTools.h"
+#include "../../code/header_file/UCLCode.h"
+#include "../../UCL/UCL.h"
+#include "../../code/header_file/XMLTools.h"
 #include "ZCPSInfo.h"
 
 UCLPropertiesInfo::UCLPropertiesInfo()

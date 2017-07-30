@@ -5,7 +5,7 @@
 #ifndef UCL_CPP_GENCDPSPROPERTY_H
 #define UCL_CPP_GENCDPSPROPERTY_H
 
-#include "UCLPropertyBase.h"
+#include "../base/UCLPropertyBase.h"
 
 /**
  * CDPS, title, keywords, abstract, author, entity, Tag, copyright,  originality, file Description

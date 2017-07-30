@@ -11,7 +11,7 @@
 #include <inttypes.h>
 
 
-const char* XML_PATH = "./code/zc_conf_xml/zcConf.xml";
+const char* XML_PATH = "../code/zc_conf_xml/zcConf.xml";
 const char* UNDF_INFO = "Undefined";
 
 
@@ -127,8 +127,8 @@ bool showMBUFromXml(const char* fieldName, uint8_t mbuOrder, uint64_t mbuValue, 
     		width = MBU.find(buff)->second;
     	}
 
-    	cout << setfill('0') << setw(width) << itoa(mbuValue, binaryString, 2)
-    			<< "(B)\n" << setfill(' ') ;
+//    	cout << setfill('0') << setw(width) << itoa(mbuValue, binaryString, 2)
+//    			<< "(B)\n" << setfill(' ') ;
     	delete[] binaryString;
     }
 

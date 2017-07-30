@@ -7,11 +7,11 @@
 
 #include <vector>
 #include <map>
-#include "../property/UCLPropertyHead.h"
-#include "../property/UCLPropertySet.h"
+#include "../property/base/UCLPropertyHead.h"
+#include "../property/base/UCLPropertySet.h"
 #include "../code/header_file/UCLCode.h"
 #include "../code/header_file/UCLCodeExtension.h"
-#include "../property/UCLPropertiesInfo.h"
+#include "../property/info/UCLPropertiesInfo.h"
 
 //UCL标准受控映射表
 static UCLPropertiesInfo UPI = UCLPropertiesInfo();

@@ -14,17 +14,18 @@ UCLPropertyBase GenZCPSProperty::genName(string vPart, uint8_t helper) {
 }
 
 //space location
-UCLPropertyBase GenZCPSProperty::genSpaceLoc(string vPart, uint8_t helper) {
-    assert(helper >= 1 && helper <= 5);
+UCLPropertyBase GenZCPSProperty::genSpaceLoc(string vPart, uint8_t parse, uint8_t helper) {
     UCLPropertyBase spaceLoc;
+    spaceLoc.setLPartHead(2, 5, parse);
     spaceLoc.setProperty(0x2, helper, vPart);
 
     return spaceLoc;
 }
 
 //Time
-UCLPropertyBase GenZCPSProperty::genTime(string vPart, uint8_t helper) {
+UCLPropertyBase GenZCPSProperty::genTime(string vPart, uint8_t parse, uint8_t helper) {
     UCLPropertyBase time;
+    time.setLPartHead(2, 5, parse);
     time.setProperty(0x3, helper, vPart);
 
     return time;
@@ -63,7 +64,7 @@ UCLPropertyBase GenZCPSProperty::genPassingAbility(string vPart, uint8_t helper)
 }
 
 //Space status
-UCLPropertyBase GenZCPSProperty::genSpaceStatus(string vPart, uint8_t helper) {
+UCLPropertyBase GenZCPSProperty::genSpaceEnemyS(string vPart, uint8_t helper) {
     UCLPropertyBase spaceStatus;
     spaceStatus.setProperty(0x8, helper, vPart);
 
@@ -71,27 +72,27 @@ UCLPropertyBase GenZCPSProperty::genSpaceStatus(string vPart, uint8_t helper) {
 }
 
 //Absolute motion features
-UCLPropertyBase GenZCPSProperty::genAbsMotionFea(string vPart, uint8_t helper) {
-    assert(helper >= 1 && helper <= 4);
+UCLPropertyBase GenZCPSProperty::genAbsMotionFea(string vPart, uint8_t parse, uint8_t helper) {
     UCLPropertyBase absMontionFea;
+    absMontionFea.setLPartHead(2, 5, parse);
     absMontionFea.setProperty(11, helper, vPart);
 
     return absMontionFea;
 }
 
 //Relative motion features
-UCLPropertyBase GenZCPSProperty::genRelMotionFea(string vPart, uint8_t helper) {
-    assert(helper >= 1 && helper <= 4);
+UCLPropertyBase GenZCPSProperty::genRelMotionFea(string vPart, uint8_t parse, uint8_t helper) {
     UCLPropertyBase relMontionFea;
+    relMontionFea.setLPartHead(2, 5, parse);
     relMontionFea.setProperty(12, helper, vPart);
 
     return relMontionFea;
 }
 
 //Travelling Path
-UCLPropertyBase GenZCPSProperty::genTravellingPath(string vPart, uint8_t helper) {
-    assert(helper >= 1 && helper <= 4);
+UCLPropertyBase GenZCPSProperty::genTravellingPath(string vPart, uint8_t parse, uint8_t helper) {
     UCLPropertyBase travellingPath;
+    travellingPath.setLPartHead(2, 5, parse);
     travellingPath.setProperty(13, helper, vPart);
 
     return travellingPath;

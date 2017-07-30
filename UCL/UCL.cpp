@@ -5,7 +5,7 @@
 #include <map>
 #include <bitset>
 #include <cassert>
-#include "../property/UCLPropertyHead.h"
+#include "../property/base/UCLPropertyHead.h"
 #include "UCL.h"
 #include "../tools/digest/UCLMD5.h"
 #include "../tools/digest/UCLCRC32.h"

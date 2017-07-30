@@ -8,8 +8,8 @@
 #include <iomanip>
 #include <fstream>
 #include <iostream>
-#include "../property/UCLPropertyHead.h"
-#include "../property/UCLPropertySet.h"
+#include "../property/base/UCLPropertyHead.h"
+#include "../property/base/UCLPropertySet.h"
 #include "../UCL/UCL.h"
 #include <sstream>
 

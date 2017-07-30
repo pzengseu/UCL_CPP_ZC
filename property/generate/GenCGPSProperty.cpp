@@ -4,7 +4,7 @@
 
 #include <assert.h>
 #include "GenCGPSProperty.h"
-#include "../UCL/UCL.h"
+#include "../../UCL/UCL.h"
 
 UCLPropertyBase GenCGPSProperty::genProvenance(uint8_t des, string vPart, uint8_t helper)
 {

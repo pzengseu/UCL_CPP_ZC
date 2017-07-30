@@ -7,7 +7,7 @@
 
 #include <string>
 #include <map>
-#include "UCLPropertyBase.h"
+#include "../base/UCLPropertyBase.h"
 #include "ZCPSInfo.h"
 
 using namespace std;
