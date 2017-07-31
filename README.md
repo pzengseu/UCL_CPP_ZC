@@ -1,5 +1,21 @@
 # UCL_CPP_ZC
-[TOC]
+### 运行环境
+- 操作系统: Ubuntu14.04
+- 需安装软件: OpenSSL gcc g++ make cmake gdb git
+```
+sudo apt-get install openssl 
+sudo apt-get install libssl-dev
+sudo apt-get install gcc g++ make cmake gdb
+sudo apt-get install git
+```
+- git clone到本地
+```
+git clone git@github.com:pzengseu/UCL_CPP_ZC.git
+```
+- IDE: CLion, CLion导入clone到本地的目录
+
+### 运行示例
+以下示例可参考test目录下testCommand方法。
 1. 建立UCL对象
 ```
     UCL ucl；
