@@ -217,7 +217,7 @@ UCLPropertySet generateZCPS()
 ##############测试属性##############
 
 --------------UCLPackage-------------- 
-69-0f-4e-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-3f-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-12-a9-01-48-e5-03-06-80-01-4c-84-01-02-c2-01-00-45-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-20-e5-9f-b9-e8-82-b2-e7-99-be-e4-b8-aa-e5-86-9c-e4-b8-9a-e7-89-b9-e8-89-b2-e9-95-87-09-00-0d-e6-96-87-e6-9c-ac-3b-31-30-4d-0e-08-da-69-0f-00-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-17-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-3a-6f-69-0f-40-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-27-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-4a-90-01-04-97-02-80-01-00-4a-02-00-01-00-45-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-20-e5-9f-b9-e8-82-b2-e7-99-be-e4-b8-aa-e5-86-9c-e4-b8-9a-e7-89-b9-e8-89-b2-e9-95-87-0f-00-48-00-80-3f-0c-43-4d-43-77-43-46-42-57-6f-4b-4d-30-5a-4e-44-69-32-6f-2f-42-2f-4c-39-54-57-32-65-79-39-68-63-63-61-41-68-51-56-48-4d-57-44-6e-36-63-58-33-48-78-43-65-4c-63-70-41-56-41-6d-69-71-6a-72-57-67-3d-3d-0f-00-52-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-2c-20-e5-85-a8-e7-9c-81-e5-88-9b-e6-84-8f-e4-bc-91-e9-97-b2-e5-86-9c-e4-b8-9a-e5-b7-a5-e4-bd-9c-e6-8e-a8-e8-bf-9b-e4-bc-9a-02-68-57-01-fe-39-01-00-09-e6-88-98-e5-9c-ba-02-08-32-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-03-08-1c-53-75-6e-20-4a-75-6c-20-33-30-20-32-32-3a-34-31-3a-33-32-20-32-30-31-37-0a-04-00-34-31-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-05-00-08-30-3b-3b-31-3b-06-00-04-31-07-00-04-31-08-00-11-e5-9d-a6-e5-85-8b-3b-3b-e6-bd-9c-e8-89-87-0b-04-36-31-30-3b-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0c-04-39-31-30-3b-31-30-30-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0d-08-36-31-30-3b-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0f-44-04-01-00-90-2c-10-4f-4d-44-55-43-47-44-69-55-69-45-77-46-50-59-38-66-65-54-56-77-69-4c-75-44-4f-53-2b-44-73-65-33-56-43-70-79-72-44-67-49-5a-41-4b-7a-45-46-31-6e-56-31-45-70-76-57-71-37-35-61-77-2f-6b-6d-72-6d-46-39-34-73-63-30-45-42-6a-65-67-3d-3d-1f-08-af-4e-32-36-54-56-66-51-74-44-5a-79-56-79-74-31-78-48-74-49-59-41-49-79-6c-78-45-6c-67-46-7a-44-6e-75-35-35-6d-30-61-78-4f-73-6b-4d-33-33-69-32-54-6a-44-48-6a-61-6e-52-35-42-2b-46-46-36-31-4d-47-64-4c-74-58-31-39-62-46-64-59-74-67-5a-2f-49-37-54-4b-42-42-71-4b-4b-41-6f-63-48-52-6b-62-4b-48-4f-4b-4a-52-34-4d-72-6b-7a-68-41-6a-43-43-67-78-2f-63-79-72-2b-4a-4a-50-2b-30-59-51-71-59-79-55-42-43-63-71-72-76-79-4e-45-6b-63-77-7a-54-4c-48-4c-65-52-2b-71-33-4a-31-75-30-72-62-54-7a-35-55-6e-67-6a-76-37-63-32-64-47-4c-41-3d-
+69-0f-4e-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-3f-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-12-a9-01-48-e5-03-06-80-01-4c-84-01-02-c2-01-00-45-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-20-e5-9f-b9-e8-82-b2-e7-99-be-e4-b8-aa-e5-86-9c-e4-b8-9a-e7-89-b9-e8-89-b2-e9-95-87-09-00-0d-e6-96-87-e6-9c-ac-3b-31-30-4d-0e-08-da-69-0f-00-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-17-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-3a-6f-69-0f-40-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-27-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-4a-90-01-04-97-02-80-01-00-4a-02-00-01-00-45-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-20-e5-9f-b9-e8-82-b2-e7-99-be-e4-b8-aa-e5-86-9c-e4-b8-9a-e7-89-b9-e8-89-b2-e9-95-87-0f-00-48-00-80-3f-0c-43-4d-43-77-43-46-43-6d-55-39-78-70-5a-45-6a-52-65-6a-39-66-39-61-34-54-50-37-2f-65-6b-31-2f-38-48-41-68-52-50-51-2b-6b-45-4e-77-58-48-39-71-75-58-36-45-50-53-73-66-4f-67-61-58-72-75-52-41-3d-3d-0f-00-52-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-2c-20-e5-85-a8-e7-9c-81-e5-88-9b-e6-84-8f-e4-bc-91-e9-97-b2-e5-86-9c-e4-b8-9a-e5-b7-a5-e4-bd-9c-e6-8e-a8-e8-bf-9b-e4-bc-9a-02-68-57-01-fe-39-01-00-09-e6-88-98-e5-9c-ba-02-08-32-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-03-08-1c-4d-6f-6e-20-4a-75-6c-20-33-31-20-32-30-3a-30-35-3a-30-38-20-32-30-31-37-0a-04-00-34-31-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-05-00-08-30-3b-3b-31-3b-06-00-04-31-07-00-04-31-08-00-11-e5-9d-a6-e5-85-8b-3b-3b-e6-bd-9c-e8-89-87-0b-04-36-31-30-3b-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0c-04-39-31-30-3b-31-30-30-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0d-08-36-31-30-3b-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0f-44-04-01-00-90-2c-10-4f-4d-44-59-43-47-51-44-6e-70-31-54-47-46-39-43-72-56-4a-4e-55-2f-6b-67-59-33-65-64-63-74-63-54-31-33-68-33-37-43-56-67-43-47-51-43-58-43-33-7a-67-32-52-66-69-43-34-77-61-71-33-69-71-36-79-74-30-52-52-56-62-59-41-2f-62-36-6c-41-3d-1f-08-af-74-4f-4f-37-4c-37-6d-47-46-48-6b-78-69-31-56-45-42-46-71-78-79-59-37-47-63-30-79-59-32-52-72-78-46-66-4b-51-77-41-4f-49-50-41-41-2b-6d-65-38-57-79-62-37-2b-53-4c-44-58-31-71-57-64-36-4f-41-72-34-69-30-77-77-53-2b-39-59-34-4c-4d-56-52-51-45-6e-6d-33-66-58-63-4a-6d-57-2f-7a-4f-70-71-54-4f-42-46-5a-53-5a-42-54-55-4e-59-61-67-58-51-42-56-30-50-6c-52-6e-47-4a-31-71-66-46-48-6a-39-57-78-79-43-5a-6e-4d-56-77-35-61-68-72-2f-6f-6d-64-46-4b-65-73-49-52-34-4c-64-73-31-4d-65-6d-54-51-73-33-65-65-6c-32-2b-4d-48-55-48-73-3d-
 
 --------------显示UCL各部分关键信息--------------
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -234,23 +234,23 @@ UCLPropertySet generateZCPS()
                             FLAG : UCL Package Is Integrated
                             FLAG : Have Related UCLs
                             FLAG : Have User-defined Property Set
-                            FLAG : 1(B)
-                       PARSERULE : 000002(B)
-                       PARSERULE : 000002(B)
-                      SOUROFCONT : 001(B)
+                            FLAG : 0(B)
+                       PARSERULE : 3f(B)
+                       PARSERULE : 31(B)
+                      SOUROFCONT : 7(B)
                       SOUROFCONT : 1(B)
-                      SOUROFCONT : 000000000000000000000001(B)
-                        CATEGORY : 00000003(B)
+                      SOUROFCONT : 0(B)
+                        CATEGORY : ff(B)
                      SUBCATEGORY : Squad
                            TOPIC : Common Topic
-                           TOPIC : 01(B)
-                           TOPIC : 0000000000000000000000000009(B)
+                           TOPIC : 0(B)
+                           TOPIC : ffffff1(B)
                COPYANDTYPEOFCONT : Have Copyright Information
                COPYANDTYPEOFCONT : Direct Command
                COPYANDTYPEOFCONT : Free Content
                COPYANDTYPEOFCONT : 1(B)
-               COPYANDTYPEOFCONT : 0002(B)
-                SECUENERLEVECODE : 01(B)
+               COPYANDTYPEOFCONT : e(B)
+                SECUENERLEVECODE : 3(B)
                 SECUENERLEVECODE : Physics Safety Level : 7
                 SECUENERLEVECODE : Logic Safety Level : 3
                         LANGUAGE : Other Language
@@ -293,33 +293,33 @@ UCLPropertySet generateZCPS()
                             FLAG : UCL Package And Content Object Is detached
                             FLAG : Do Not Have Related UCLs
                             FLAG : Do Not Have User-defined Property Set
-                            FLAG : 1(B)
-                       PARSERULE : 000002(B)
-                       PARSERULE : 000002(B)
-                      SOUROFCONT : 001(B)
+                            FLAG : 0(B)
+                       PARSERULE : 3f(B)
+                       PARSERULE : 31(B)
+                      SOUROFCONT : 7(B)
                       SOUROFCONT : 1(B)
-                      SOUROFCONT : 000000000000000000000001(B)
-                        CATEGORY : 00000003(B)
+                      SOUROFCONT : 0(B)
+                        CATEGORY : ff(B)
                      SUBCATEGORY : Squad
                            TOPIC : Common Topic
-                           TOPIC : 01(B)
-                           TOPIC : 0000000000000000000000000009(B)
+                           TOPIC : 0(B)
+                           TOPIC : ffffff1(B)
                COPYANDTYPEOFCONT : Have Copyright Information
                COPYANDTYPEOFCONT : Direct Command
                COPYANDTYPEOFCONT : Free Content
                COPYANDTYPEOFCONT : 1(B)
-               COPYANDTYPEOFCONT : 0002(B)
-                SECUENERLEVECODE : 01(B)
+               COPYANDTYPEOFCONT : e(B)
+                SECUENERLEVECODE : 3(B)
                 SECUENERLEVECODE : Physics Safety Level : 7
                 SECUENERLEVECODE : Logic Safety Level : 3
                         LANGUAGE : Other Language
                         LANGUAGE : Property Part Has The Same Language With Meta Language
                    SIZEOFCONTENT : [1, 4)
                    SIZEOFCONTENT : MB
-                       TIMESTAMP : 8796093020665	                            TIME : 280707-2-4 12:24:25
-                    SERIALNUMBER : 79
-                  MULTIPLEXBYTES : 34357045600072
-                       CODECHECK : 14959
+                       TIMESTAMP : 7fffffff9f9	                            TIME : 44883-2-4 c:18:19
+                    SERIALNUMBER : 4f
+                  MULTIPLEXBYTES : 1f3f5f7f9f48
+                       CODECHECK : 3a6f
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -337,33 +337,33 @@ UCLPropertySet generateZCPS()
                             FLAG : UCL Package And Content Object Is detached
                             FLAG : Do Not Have Related UCLs
                             FLAG : Do Not Have User-defined Property Set
-                            FLAG : 1(B)
-                       PARSERULE : 000002(B)
-                       PARSERULE : 000002(B)
-                      SOUROFCONT : 001(B)
+                            FLAG : 0(B)
+                       PARSERULE : 3f(B)
+                       PARSERULE : 31(B)
+                      SOUROFCONT : 7(B)
                       SOUROFCONT : 1(B)
-                      SOUROFCONT : 000000000000000000000001(B)
-                        CATEGORY : 00000003(B)
+                      SOUROFCONT : 0(B)
+                        CATEGORY : ff(B)
                      SUBCATEGORY : Squad
                            TOPIC : Common Topic
-                           TOPIC : 01(B)
-                           TOPIC : 0000000000000000000000000009(B)
+                           TOPIC : 0(B)
+                           TOPIC : ffffff1(B)
                COPYANDTYPEOFCONT : Have Copyright Information
                COPYANDTYPEOFCONT : Direct Command
                COPYANDTYPEOFCONT : Free Content
                COPYANDTYPEOFCONT : 1(B)
-               COPYANDTYPEOFCONT : 0002(B)
-                SECUENERLEVECODE : 01(B)
+               COPYANDTYPEOFCONT : e(B)
+                SECUENERLEVECODE : 3(B)
                 SECUENERLEVECODE : Physics Safety Level : 7
                 SECUENERLEVECODE : Logic Safety Level : 3
                         LANGUAGE : Other Language
                         LANGUAGE : Property Part Has The Same Language With Meta Language
                    SIZEOFCONTENT : [4, 16)
                    SIZEOFCONTENT : B
-                       TIMESTAMP : 8796093020665	                            TIME : 280707-2-4 12:24:25
-                    SERIALNUMBER : 79
-                  MULTIPLEXBYTES : 34357045600072
-                       CODECHECK : 19088
+                       TIMESTAMP : 7fffffff9f9	                            TIME : 44883-2-4 c:18:19
+                    SERIALNUMBER : 4f
+                  MULTIPLEXBYTES : 1f3f5f7f9f48
+                       CODECHECK : 4a90
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --------------属性部分----------------
 元语言类型: 中文
@@ -380,7 +380,7 @@ UCLPropertySet generateZCPS()
 属性集类别: 15    属性个数: 1
 属性类别: 15    属性名: 全UCL包数字签名
 数字摘要算法: SHA-256   数字签名算法: DSA
-摘要或签名信息: MCwCFBWoKM0ZNDi2o/B/L9TW2ey9hccaAhQVHMWDn6cX3HxCeLcpAVAmiqjrWg==
+摘要或签名信息: MCwCFCmU9xpZEjRej9f9a4TP7/ek1/8HAhRPQ+kENwXH9quX6EPSsfOgaXruRA==
 ------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 --------------------------关联UCL结束-----------------------------
@@ -389,7 +389,7 @@ UCLPropertySet generateZCPS()
 属性值: 江苏今年起实施“12311”计划, 全省创意休闲农业工作推进会
 ------------------------------------
 **************************
-属性集合名: ZC目标对象编码体系属性集合
+属性集合名: ZC目标对象描述属性集合
 属性集类别: 2    属性个数: 11
 属性类别: 1    属性名: 目标对象名称
 名称: 战场
@@ -400,7 +400,7 @@ UCLPropertySet generateZCPS()
 ------------------------------------
 属性类别: 3    属性名: 时间信息
 授时信息规则：GPS
-时间：Sun Jul 30 22:41:32 2017
+时间：Mon Jul 31 20:05:08 2017
 ------------------------------------
 属性类别: 4    属性名: 目标外形
 几何轮廓: 1, 长方形
@@ -418,7 +418,7 @@ UCLPropertySet generateZCPS()
 属性类别: 7    属性名: 通过程度
 通过程度: 1, 可通过
 ------------------------------------
-属性类别: 8    属性名: 空间状况信息地
+属性类别: 8    属性名: 空间敌我态势
 地面敌我状态信息: 坦克
 空中敌我环境信息: 
 水下敌我状况信息: 潜艇
@@ -444,17 +444,17 @@ UCLPropertySet generateZCPS()
 属性集类别: 15    属性个数: 2
 属性类别: 12    属性名: 内容数字签名
 数字摘要算法: SHA-512   数字签名算法: ECDSA
-摘要或签名信息: MDUCGDiUiEwFPY8feTVwiLuDOS+Dse3VCpyrDgIZAKzEF1nV1EpvWq75aw/kmrmF94sc0EBjeg==
+摘要或签名信息: MDYCGQDnp1TGF9CrVJNU/kgY3edctcT13h37CVgCGQCXC3zg2RfiC4waq3iq6yt0RRVbYA/b6lA=
 ------------------------------------
 属性类别: 15    属性名: 全UCL包数字签名
 数字摘要算法: MD5   数字签名算法: RSA
-摘要或签名信息: N26TVfQtDZyVyt1xHtIYAIylxElgFzDnu55m0axOskM33i2TjDHjanR5B+FF61MGdLtX19bFdYtgZ/I7TKBBqKKAocHRkbKHOKJR4MrkzhAjCCgx/cyr+JJP+0YQqYyUBCcqrvyNEkcwzTLHLeR+q3J1u0rbTz5Ungjv7c2dGLA=
+摘要或签名信息: tOO7L7mGFHkxi1VEBFqxyY7Gc0yY2RrxFfKQwAOIPAA+me8Wyb7+SLDX1qWd6OAr4i0wwS+9Y4LMVRQEnm3fXcJmW/zOpqTOBFZSZBTUNYagXQBV0PlRnGJ1qfFHj9WxyCZnMVw5ahr/omdFKesIR4Lds1MemTQs3eel2+MHUHs=
 ------------------------------------
 
 ##############测试解包##############
 
 --------------UCLPackage--------------
-69-0f-4e-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-3f-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-12-a9-01-48-e5-03-06-80-01-4c-84-01-02-c2-01-00-45-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-20-e5-9f-b9-e8-82-b2-e7-99-be-e4-b8-aa-e5-86-9c-e4-b8-9a-e7-89-b9-e8-89-b2-e9-95-87-09-00-0d-e6-96-87-e6-9c-ac-3b-31-30-4d-0e-08-da-69-0f-00-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-17-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-3a-6f-69-0f-40-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-27-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-4a-90-01-04-97-02-80-01-00-4a-02-00-01-00-45-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-20-e5-9f-b9-e8-82-b2-e7-99-be-e4-b8-aa-e5-86-9c-e4-b8-9a-e7-89-b9-e8-89-b2-e9-95-87-0f-00-48-00-80-3f-0c-43-4d-43-77-43-46-42-57-6f-4b-4d-30-5a-4e-44-69-32-6f-2f-42-2f-4c-39-54-57-32-65-79-39-68-63-63-61-41-68-51-56-48-4d-57-44-6e-36-63-58-33-48-78-43-65-4c-63-70-41-56-41-6d-69-71-6a-72-57-67-3d-3d-0f-00-52-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-2c-20-e5-85-a8-e7-9c-81-e5-88-9b-e6-84-8f-e4-bc-91-e9-97-b2-e5-86-9c-e4-b8-9a-e5-b7-a5-e4-bd-9c-e6-8e-a8-e8-bf-9b-e4-bc-9a-02-68-57-01-fe-39-01-00-09-e6-88-98-e5-9c-ba-02-08-32-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-03-08-1c-53-75-6e-20-4a-75-6c-20-33-30-20-32-32-3a-34-31-3a-33-32-20-32-30-31-37-0a-04-00-34-31-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-05-00-08-30-3b-3b-31-3b-06-00-04-31-07-00-04-31-08-00-11-e5-9d-a6-e5-85-8b-3b-3b-e6-bd-9c-e8-89-87-0b-04-36-31-30-3b-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0c-04-39-31-30-3b-31-30-30-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0d-08-36-31-30-3b-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0f-44-04-01-00-90-2c-10-4f-4d-44-55-43-47-44-69-55-69-45-77-46-50-59-38-66-65-54-56-77-69-4c-75-44-4f-53-2b-44-73-65-33-56-43-70-79-72-44-67-49-5a-41-4b-7a-45-46-31-6e-56-31-45-70-76-57-71-37-35-61-77-2f-6b-6d-72-6d-46-39-34-73-63-30-45-42-6a-65-67-3d-3d-1f-08-af-4e-32-36-54-56-66-51-74-44-5a-79-56-79-74-31-78-48-74-49-59-41-49-79-6c-78-45-6c-67-46-7a-44-6e-75-35-35-6d-30-61-78-4f-73-6b-4d-33-33-69-32-54-6a-44-48-6a-61-6e-52-35-42-2b-46-46-36-31-4d-47-64-4c-74-58-31-39-62-46-64-59-74-67-5a-2f-49-37-54-4b-42-42-71-4b-4b-41-6f-63-48-52-6b-62-4b-48-4f-4b-4a-52-34-4d-72-6b-7a-68-41-6a-43-43-67-78-2f-63-79-72-2b-4a-4a-50-2b-30-59-51-71-59-79-55-42-43-63-71-72-76-79-4e-45-6b-63-77-7a-54-4c-48-4c-65-52-2b-71-33-4a-31-75-30-72-62-54-7a-35-55-6e-67-6a-76-37-63-32-64-47-4c-41-3d-
+69-0f-4e-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-3f-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-12-a9-01-48-e5-03-06-80-01-4c-84-01-02-c2-01-00-45-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-20-e5-9f-b9-e8-82-b2-e7-99-be-e4-b8-aa-e5-86-9c-e4-b8-9a-e7-89-b9-e8-89-b2-e9-95-87-09-00-0d-e6-96-87-e6-9c-ac-3b-31-30-4d-0e-08-da-69-0f-00-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-17-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-3a-6f-69-0f-40-ff-1f-ff-ff-f1-ff-01-0f-ff-ff-f1-fe-fb-fd-27-ff-ff-ff-f9-f9-4f-1f-3f-5f-7f-9f-48-4a-90-01-04-97-02-80-01-00-4a-02-00-01-00-45-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-20-e5-9f-b9-e8-82-b2-e7-99-be-e4-b8-aa-e5-86-9c-e4-b8-9a-e7-89-b9-e8-89-b2-e9-95-87-0f-00-48-00-80-3f-0c-43-4d-43-77-43-46-43-6d-55-39-78-70-5a-45-6a-52-65-6a-39-66-39-61-34-54-50-37-2f-65-6b-31-2f-38-48-41-68-52-50-51-2b-6b-45-4e-77-58-48-39-71-75-58-36-45-50-53-73-66-4f-67-61-58-72-75-52-41-3d-3d-0f-00-52-e6-b1-9f-e8-8b-8f-e4-bb-8a-e5-b9-b4-e8-b5-b7-e5-ae-9e-e6-96-bd-e2-80-9c-31-32-33-31-31-e2-80-9d-e8-ae-a1-e5-88-92-2c-20-e5-85-a8-e7-9c-81-e5-88-9b-e6-84-8f-e4-bc-91-e9-97-b2-e5-86-9c-e4-b8-9a-e5-b7-a5-e4-bd-9c-e6-8e-a8-e8-bf-9b-e4-bc-9a-02-68-57-01-fe-39-01-00-09-e6-88-98-e5-9c-ba-02-08-32-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-03-08-1c-4d-6f-6e-20-4a-75-6c-20-33-31-20-32-30-3a-30-35-3a-30-38-20-32-30-31-37-0a-04-00-34-31-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-05-00-08-30-3b-3b-31-3b-06-00-04-31-07-00-04-31-08-00-11-e5-9d-a6-e5-85-8b-3b-3b-e6-bd-9c-e8-89-87-0b-04-36-31-30-3b-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0c-04-39-31-30-3b-31-30-30-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0d-08-36-31-30-3b-3b-e5-8c-97-e7-ba-ac-4e-33-39-c2-b0-34-30-e2-80-b2-32-30-2e-30-39-e2-80-b3-20-e4-b8-9c-e7-bb-8f-45-31-31-36-c2-b0-33-32-e2-80-b2-31-33-2e-35-31-0f-44-04-01-00-90-2c-10-4f-4d-44-59-43-47-51-44-6e-70-31-54-47-46-39-43-72-56-4a-4e-55-2f-6b-67-59-33-65-64-63-74-63-54-31-33-68-33-37-43-56-67-43-47-51-43-58-43-33-7a-67-32-52-66-69-43-34-77-61-71-33-69-71-36-79-74-30-52-52-56-62-59-41-2f-62-36-6c-41-3d-1f-08-af-74-4f-4f-37-4c-37-6d-47-46-48-6b-78-69-31-56-45-42-46-71-78-79-59-37-47-63-30-79-59-32-52-72-78-46-66-4b-51-77-41-4f-49-50-41-41-2b-6d-65-38-57-79-62-37-2b-53-4c-44-58-31-71-57-64-36-4f-41-72-34-69-30-77-77-53-2b-39-59-34-4c-4d-56-52-51-45-6e-6d-33-66-58-63-4a-6d-57-2f-7a-4f-70-71-54-4f-42-46-5a-53-5a-42-54-55-4e-59-61-67-58-51-42-56-30-50-6c-52-6e-47-4a-31-71-66-46-48-6a-39-57-78-79-43-5a-6e-4d-56-77-35-61-68-72-2f-6f-6d-64-46-4b-65-73-49-52-34-4c-64-73-31-4d-65-6d-54-51-73-33-65-65-6c-32-2b-4d-48-55-48-73-3d-
 
 --------------解包后UCL各部分关键信息--------------
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -471,23 +471,23 @@ UCLPropertySet generateZCPS()
                             FLAG : UCL Package Is Integrated
                             FLAG : Have Related UCLs
                             FLAG : Have User-defined Property Set
-                            FLAG : 1(B)
-                       PARSERULE : 000002(B)
-                       PARSERULE : 000002(B)
-                      SOUROFCONT : 001(B)
+                            FLAG : 0(B)
+                       PARSERULE : 3f(B)
+                       PARSERULE : 31(B)
+                      SOUROFCONT : 7(B)
                       SOUROFCONT : 1(B)
-                      SOUROFCONT : 000000000000000000000001(B)
-                        CATEGORY : 00000003(B)
+                      SOUROFCONT : 0(B)
+                        CATEGORY : ff(B)
                      SUBCATEGORY : Squad
                            TOPIC : Common Topic
-                           TOPIC : 01(B)
-                           TOPIC : 0000000000000000000000000009(B)
+                           TOPIC : 0(B)
+                           TOPIC : ffffff1(B)
                COPYANDTYPEOFCONT : Have Copyright Information
                COPYANDTYPEOFCONT : Direct Command
                COPYANDTYPEOFCONT : Free Content
                COPYANDTYPEOFCONT : 1(B)
-               COPYANDTYPEOFCONT : 0002(B)
-                SECUENERLEVECODE : 01(B)
+               COPYANDTYPEOFCONT : e(B)
+                SECUENERLEVECODE : 3(B)
                 SECUENERLEVECODE : Physics Safety Level : 7
                 SECUENERLEVECODE : Logic Safety Level : 3
                         LANGUAGE : Other Language
@@ -530,33 +530,33 @@ UCLPropertySet generateZCPS()
                             FLAG : UCL Package And Content Object Is detached
                             FLAG : Do Not Have Related UCLs
                             FLAG : Do Not Have User-defined Property Set
-                            FLAG : 1(B)
-                       PARSERULE : 000002(B)
-                       PARSERULE : 000002(B)
-                      SOUROFCONT : 001(B)
+                            FLAG : 0(B)
+                       PARSERULE : 3f(B)
+                       PARSERULE : 31(B)
+                      SOUROFCONT : 7(B)
                       SOUROFCONT : 1(B)
-                      SOUROFCONT : 000000000000000000000001(B)
-                        CATEGORY : 00000003(B)
+                      SOUROFCONT : 0(B)
+                        CATEGORY : ff(B)
                      SUBCATEGORY : Squad
                            TOPIC : Common Topic
-                           TOPIC : 01(B)
-                           TOPIC : 0000000000000000000000000009(B)
+                           TOPIC : 0(B)
+                           TOPIC : ffffff1(B)
                COPYANDTYPEOFCONT : Have Copyright Information
                COPYANDTYPEOFCONT : Direct Command
                COPYANDTYPEOFCONT : Free Content
                COPYANDTYPEOFCONT : 1(B)
-               COPYANDTYPEOFCONT : 0002(B)
-                SECUENERLEVECODE : 01(B)
+               COPYANDTYPEOFCONT : e(B)
+                SECUENERLEVECODE : 3(B)
                 SECUENERLEVECODE : Physics Safety Level : 7
                 SECUENERLEVECODE : Logic Safety Level : 3
                         LANGUAGE : Other Language
                         LANGUAGE : Property Part Has The Same Language With Meta Language
                    SIZEOFCONTENT : [1, 4)
                    SIZEOFCONTENT : MB
-                       TIMESTAMP : 8796093020665	                            TIME : 280707-2-4 12:24:25
-                    SERIALNUMBER : 79
-                  MULTIPLEXBYTES : 34357045600072
-                       CODECHECK : 14959
+                       TIMESTAMP : 7fffffff9f9	                            TIME : 44883-2-4 c:18:19
+                    SERIALNUMBER : 4f
+                  MULTIPLEXBYTES : 1f3f5f7f9f48
+                       CODECHECK : 3a6f
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -574,33 +574,33 @@ UCLPropertySet generateZCPS()
                             FLAG : UCL Package And Content Object Is detached
                             FLAG : Do Not Have Related UCLs
                             FLAG : Do Not Have User-defined Property Set
-                            FLAG : 1(B)
-                       PARSERULE : 000002(B)
-                       PARSERULE : 000002(B)
-                      SOUROFCONT : 001(B)
+                            FLAG : 0(B)
+                       PARSERULE : 3f(B)
+                       PARSERULE : 31(B)
+                      SOUROFCONT : 7(B)
                       SOUROFCONT : 1(B)
-                      SOUROFCONT : 000000000000000000000001(B)
-                        CATEGORY : 00000003(B)
+                      SOUROFCONT : 0(B)
+                        CATEGORY : ff(B)
                      SUBCATEGORY : Squad
                            TOPIC : Common Topic
-                           TOPIC : 01(B)
-                           TOPIC : 0000000000000000000000000009(B)
+                           TOPIC : 0(B)
+                           TOPIC : ffffff1(B)
                COPYANDTYPEOFCONT : Have Copyright Information
                COPYANDTYPEOFCONT : Direct Command
                COPYANDTYPEOFCONT : Free Content
                COPYANDTYPEOFCONT : 1(B)
-               COPYANDTYPEOFCONT : 0002(B)
-                SECUENERLEVECODE : 01(B)
+               COPYANDTYPEOFCONT : e(B)
+                SECUENERLEVECODE : 3(B)
                 SECUENERLEVECODE : Physics Safety Level : 7
                 SECUENERLEVECODE : Logic Safety Level : 3
                         LANGUAGE : Other Language
                         LANGUAGE : Property Part Has The Same Language With Meta Language
                    SIZEOFCONTENT : [4, 16)
                    SIZEOFCONTENT : B
-                       TIMESTAMP : 8796093020665	                            TIME : 280707-2-4 12:24:25
-                    SERIALNUMBER : 79
-                  MULTIPLEXBYTES : 34357045600072
-                       CODECHECK : 19088
+                       TIMESTAMP : 7fffffff9f9	                            TIME : 44883-2-4 c:18:19
+                    SERIALNUMBER : 4f
+                  MULTIPLEXBYTES : 1f3f5f7f9f48
+                       CODECHECK : 4a90
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --------------属性部分----------------
 元语言类型: 中文
@@ -617,7 +617,7 @@ UCLPropertySet generateZCPS()
 属性集类别: 15    属性个数: 1
 属性类别: 15    属性名: 全UCL包数字签名
 数字摘要算法: SHA-256   数字签名算法: DSA
-摘要或签名信息: MCwCFBWoKM0ZNDi2o/B/L9TW2ey9hccaAhQVHMWDn6cX3HxCeLcpAVAmiqjrWg==
+摘要或签名信息: MCwCFCmU9xpZEjRej9f9a4TP7/ek1/8HAhRPQ+kENwXH9quX6EPSsfOgaXruRA==
 ------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 --------------------------关联UCL结束-----------------------------
@@ -626,7 +626,7 @@ UCLPropertySet generateZCPS()
 属性值: 江苏今年起实施“12311”计划, 全省创意休闲农业工作推进会
 ------------------------------------
 **************************
-属性集合名: ZC目标对象编码体系属性集合
+属性集合名: ZC目标对象描述属性集合
 属性集类别: 2    属性个数: 11
 属性类别: 1    属性名: 目标对象名称
 名称: 战场
@@ -637,7 +637,7 @@ UCLPropertySet generateZCPS()
 ------------------------------------
 属性类别: 3    属性名: 时间信息
 授时信息规则：GPS
-时间：Sun Jul 30 22:41:32 2017
+时间：Mon Jul 31 20:05:08 2017
 ------------------------------------
 属性类别: 4    属性名: 目标外形
 几何轮廓: 1, 长方形
@@ -655,7 +655,7 @@ UCLPropertySet generateZCPS()
 属性类别: 7    属性名: 通过程度
 通过程度: 1, 可通过
 ------------------------------------
-属性类别: 8    属性名: 空间状况信息地
+属性类别: 8    属性名: 空间敌我态势
 地面敌我状态信息: 坦克
 空中敌我环境信息: 
 水下敌我状况信息: 潜艇
@@ -681,11 +681,11 @@ UCLPropertySet generateZCPS()
 属性集类别: 15    属性个数: 2
 属性类别: 12    属性名: 内容数字签名
 数字摘要算法: SHA-512   数字签名算法: ECDSA
-摘要或签名信息: MDUCGDiUiEwFPY8feTVwiLuDOS+Dse3VCpyrDgIZAKzEF1nV1EpvWq75aw/kmrmF94sc0EBjeg==
+摘要或签名信息: MDYCGQDnp1TGF9CrVJNU/kgY3edctcT13h37CVgCGQCXC3zg2RfiC4waq3iq6yt0RRVbYA/b6lA=
 ------------------------------------
 属性类别: 15    属性名: 全UCL包数字签名
 数字摘要算法: MD5   数字签名算法: RSA
-摘要或签名信息: N26TVfQtDZyVyt1xHtIYAIylxElgFzDnu55m0axOskM33i2TjDHjanR5B+FF61MGdLtX19bFdYtgZ/I7TKBBqKKAocHRkbKHOKJR4MrkzhAjCCgx/cyr+JJP+0YQqYyUBCcqrvyNEkcwzTLHLeR+q3J1u0rbTz5Ungjv7c2dGLA=
+摘要或签名信息: tOO7L7mGFHkxi1VEBFqxyY7Gc0yY2RrxFfKQwAOIPAA+me8Wyb7+SLDX1qWd6OAr4i0wwS+9Y4LMVRQEnm3fXcJmW/zOpqTOBFZSZBTUNYagXQBV0PlRnGJ1qfFHj9WxyCZnMVw5ahr/omdFKesIR4Lds1MemTQs3eel2+MHUHs=
 ------------------------------------
 ========== UCL test end==========
 997
