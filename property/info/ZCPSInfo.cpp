@@ -66,7 +66,7 @@ void ZCPSInfo::init() {
 
 void ZCPSInfo::setPropertyMap(map<int, string> &propertySetCategoryMap,
                               map<int, map<int, string>> &propertyCategoryMap) {
-    propertySetCategoryMap[2] = "ZC目标对象编码体系属性集合";
+    propertySetCategoryMap[2] = "ZC目标对象描述属性集合";
 
     map<int, string> zcps;
     zcps[1] = "目标对象名称";
@@ -76,7 +76,7 @@ void ZCPSInfo::setPropertyMap(map<int, string> &propertySetCategoryMap,
     zcps[5] = "物理特性";
     zcps[6] = "目标材质";
     zcps[7] = "通过程度";
-    zcps[8] = "空间状况信息地";
+    zcps[8] = "空间敌我态势";
     zcps[11] = "绝对运动特性";
     zcps[12] = "相对运动特性";
     zcps[13] = "运行轨迹";

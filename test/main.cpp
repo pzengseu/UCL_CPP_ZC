@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iterator>
 #include <bitset>
 #include "test.h"
 #include "testUCLCode.h"

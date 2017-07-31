@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 #include <inttypes.h>
-#include <cstdlib>
+#include <stdlib.h>
 #include "./header_file/XMLTools.h"
 #include "./header_file/UCLFormatMap.h"
 
@@ -127,8 +127,8 @@ bool showMBUFromXml(const char* fieldName, uint8_t mbuOrder, uint64_t mbuValue, 
     		width = MBU.find(buff)->second;
     	}
 
-        cout << setfill('0') << setw(width) << snprintf(binaryString, sizeof(binaryString), "%d", mbuValue)
-    			<< "(B)\n" << setfill(' ') ;
+        cout << hex << mbuValue
+    			<< "(B)\n" << setfill(' ');
     	delete[] binaryString;
     }
 
