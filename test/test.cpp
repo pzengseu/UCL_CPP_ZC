@@ -86,9 +86,9 @@ UCLPropertySet generateCGPS()
 {
     UCLPropertySet cgps;
     cgps.setHeadCategory(15);
-    UCLPropertyBase sigCon = GenCGPSProperty::genContSig("江苏今年起实施“12311”计划, 全省创意休闲农业工作推进会", SHA_512, ECDSA);
+    UCLPropertyBase sigCon = GenCGPSProperty::genContSig("江苏今年起实施“12311”计划, 全省创意休闲农业工作推进会", SHA_512, NO_SIG);
     cgps.setProperty(sigCon);
-    UCLPropertyBase sigUCL = GenCGPSProperty::genUCLSig(MD5, RSA);
+    UCLPropertyBase sigUCL = GenCGPSProperty::genUCLSig(MD5, NO_SIG);
     cgps.setProperty(sigUCL);
 
     return cgps;
@@ -159,7 +159,7 @@ UCL generateRUCL()
 
     UCLPropertySet cgps;
     cgps.setHeadCategory(15);
-    UCLPropertyBase sigUCL = GenCGPSProperty::genUCLSig(SHA_256, DSA);
+    UCLPropertyBase sigUCL = GenCGPSProperty::genUCLSig(SHA_256, NO_SIG);
     cgps.setProperty(sigUCL);
 //    cout << "--------------CGPS-------------- \n";
 //    printPackString(cgps.pack());

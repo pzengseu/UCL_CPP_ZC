@@ -5,6 +5,8 @@
 #ifndef UCL_CPP_DIGSIGNNO_H
 #define UCL_CPP_DIGSIGNNO_H
 
+//helper为0不进行数字签名
+#define NO_SIG       0
 #define CRC32        1
 #define MD5          2
 #define SHA_256      3

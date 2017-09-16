@@ -76,8 +76,9 @@ UCLPropertyBase GenCGPSProperty::genChainOfRes(uint8_t count, string vPart, uint
 
 UCLPropertyBase GenCGPSProperty::genUCLSig(uint8_t alg, uint8_t helper)
 {
-    assert(helper <= 5);
-    assert(alg < 5);
+    //helper为0不进行数字签名
+    assert(helper <= 5 && helper >= 0);
+    assert(alg <= 5 && alg >= 1);
 
     UCLPropertyBase signature;
     signature.setLPartHead(2, 5, alg);
