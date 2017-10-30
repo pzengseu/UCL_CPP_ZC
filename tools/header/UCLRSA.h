@@ -6,7 +6,7 @@
 #define UCL_CPP_UCLRSA_H
 
 #include "Base64Code.h"
-#include "../digest/UCLSHA_256.h"
+#include "UCLSHA_256.h"
 #include <cassert>
 #include <sstream>
 

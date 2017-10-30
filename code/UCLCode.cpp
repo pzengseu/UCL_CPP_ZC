@@ -10,8 +10,8 @@
 
 
 
-#include "./header_file/UCLCode.h"
-#include "./header_file/UCLFormatV2.h"
+#include "header_file/UCLCode.h"
+#include "header_file/UCLFormatV2.h"
 #include <iomanip>
 #include <stdio.h>
 

@@ -7,8 +7,8 @@
 #include <stdio.h>
 #include <inttypes.h>
 #include <stdlib.h>
-#include "./header_file/XMLTools.h"
-#include "./header_file/UCLFormatMap.h"
+#include "header_file/XMLTools.h"
+#include "header_file/UCLFormatMap.h"
 
 
 const char* XML_PATH = "../code/zc_conf_xml/zcConf.xml";

@@ -1,7 +1,7 @@
 //
 // Created by Fly on 2017/1/16.
 //
-#include "UCLSHA_256.h"
+#include "../header/UCLSHA_256.h"
 
 const uint32_t k[] = {
         0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,

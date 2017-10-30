@@ -2,7 +2,7 @@
 // Created by Fly on 2017/1/15.
 //
 
-#include "UCLCRC32.h"
+#include "../header/UCLCRC32.h"
 
 void UCLCRC32::make_table()
 {

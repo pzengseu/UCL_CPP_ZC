@@ -2,7 +2,7 @@
 // Created by fly on 17-6-28.
 //
 
-#include "Base64Code.h"
+#include "../header/Base64Code.h"
 
 char *Base64Encode(const unsigned char *input, int length) {
     BIO *bmem = NULL;
