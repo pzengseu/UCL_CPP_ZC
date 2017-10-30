@@ -6,7 +6,7 @@ tar -zxf ucl.tgz
 cp -R ucl /usr/share
 ```
 ## clion工程配置
-新建clion工程，在clion工程的CMakeLists.txt文件最后增加：
+新建clion工程hellotest，在clion工程的CMakeLists.txt文件最后增加：
 ```
 include_directories(
         /usr/share/ucl/include
