@@ -88,9 +88,12 @@ INSTALL(
         FILES test/test.h DESTINATION ${CMAKE_INSTALL_PREFIX}/include/test
 )
 
+#注意:动态链接库生成和执行工程不能同时进行，需注释其中一个
+#生成动态链接库
 #add_library(UCL_CPP_ZC SHARED ${SOURCE_FILES})
 #INSTALL(TARGETS UCL_CPP_ZC LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 
+#执行工程
 add_executable(UCL_CPP_ZC ${SOURCE_FILES})
 
 target_link_libraries(UCL_CPP_ZC ssl crypto)
