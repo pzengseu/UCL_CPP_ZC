@@ -56,7 +56,7 @@ void testCommand()
     ucl2.showUCL();
 
     cout << "========== UCL test end==========\n";
-    cout << ucl.getUclPropertyHead().getTotalLength() << endl;
+    cout << ucl.getUCLTotalLength() << endl;
     cout << ucl.getUclCode().getSizeOfContent();
 }
 

@@ -88,6 +88,11 @@ bool UCL::setUCLTotalLength()
     uclCode.setSizeOfContent(totalLength);
 }
 
+int UCL::getUCLTotalLength()
+{
+    return uclPropertyHead.getTotalLength() + 32;
+}
+
 void UCL::setUCL() {
     /*
      * VPart会影响QuickMatcher位置,QuickMatcher位置也会影响VPart

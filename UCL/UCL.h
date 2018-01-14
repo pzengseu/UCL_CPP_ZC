@@ -82,8 +82,11 @@ public:
     //根据propertySets生成uclPropertyHead的vPart
     string generateHeadVPart();
 
-    //获取UCL总长度（code和property）
+    //设置UCL总长度（code和property）
     bool setUCLTotalLength();
+    //得到UCL总长度
+    int getUCLTotalLength();
+
     //属性集合有变需调用该函数
     void setUCL();
 
